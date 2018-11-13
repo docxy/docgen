@@ -6,7 +6,7 @@ title: ""
 # Description of the website
 description: ""
 
-# The image that should be used for rich cards in various sites
+# Path to the image that should be used for rich cards in various sites
 # Default: `og-image.png`
 image: ""
 
