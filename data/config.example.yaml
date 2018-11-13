@@ -14,6 +14,9 @@ image: ""
 # Default: `favicon.png`
 favicon: ""
 
+# Copyright notice that would be placed in the footer.
+copyright: ""
+
 
 # Accent color of the site
 # Default: `#3eb0ef`
