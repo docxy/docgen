@@ -17,7 +17,7 @@ module.exports = {
       options: {
         name: "data",
         path: __dirname + "/data/",
-        ignore: [ "**/\.*" ],
+        ignore: [ "**/\.*", "**/*.example.*" ],
       },
     },
     {
