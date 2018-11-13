@@ -20,14 +20,6 @@ module.exports = {
         ignore: [ "**/\.*", "**/*.example.*" ],
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: __dirname + "/src/assets/images",
-        ignore: [ "**/\.*" ],
-      },
-    },
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-transformer-yaml",
