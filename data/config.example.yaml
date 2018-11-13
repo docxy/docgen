@@ -1,0 +1,24 @@
+---
+# Title of the website
+# Default: `AwesomeDocs`
+title: ""
+
+# Description of the website
+description: ""
+
+# The image that should be used for rich cards in various sites
+# Default: `og-image.png`
+image: ""
+
+# Path to the favicon of your site
+# Default: `favicon.png`
+favicon: ""
+
+
+# Accent color of the site
+# Default: `#3eb0ef`
+color: ""
+
+# Dark mode or light mode?
+# Default: `light`
+theme: ""
