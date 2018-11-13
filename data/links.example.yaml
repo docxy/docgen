@@ -1,0 +1,9 @@
+---
+# List of links that will be shown in the header
+# Supports external links as well.
+- title: "GitHub"
+  link: "https://github.com/AwesomeDocs"
+- title: "Author"
+  link: "https://github.com/k3rn31p4nic"
+- title: "404"
+  link: "/404"
