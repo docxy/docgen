@@ -9,7 +9,7 @@ export default (props) => (
       query LogoQuery {
         config: dataYaml {
           title
-          favicon
+          logo
         }
       }
     `}
@@ -26,9 +26,9 @@ export default (props) => (
           position: "relative",
         }}>
           {
-            data.config.favicon
+            data.config.logo
             ? <img
-                src={ data.config.favicon }
+                src={ data.config.logo }
                 height="25"
                 width="auto"
                 alt="Logo"
