@@ -10,9 +10,8 @@ description: ""
 # Default: `og-image.png`
 image: ""
 
-# Path to the favicon of your site
-# Default: `favicon.png`
-favicon: ""
+# Path to the logo of your site
+logo: ""
 
 # Copyright notice that would be placed in the footer.
 copyright: ""
