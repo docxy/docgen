@@ -1,53 +1,61 @@
-h2, h3, h4, h5, h6 {
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
   margin-top: 50px !important;
 }
 
-h1 {
+article h1 {
   font-size: 2.5em !important;
 }
-h2 {
+article h2 {
   font-size: 2em !important;
 }
-h3 {
+article h3 {
   font-size: 1.6em !important;
 }
-h4 {
+article h4 {
   font-size: 1.3em !important;
 }
-h4, h5, h6 {
+article h4,
+article h5,
+article h6 {
   font-size: 1.3em !important;
 }
 
-ul, ol {
+article ul,
+article ol {
   padding-left: 1.5em;
 }
 
-li {
+article li {
   margin-bottom: 10px;
 }
 
-pre, code {
+article pre,
+article code {
   padding: 3px 5px;
   border-radius: 3px;
   color: #e8eaec;
   background-color: #1f1f1f;
 }
 
-pre {
+article pre {
   padding: 10px 20px;
   border-radius: 5px;
   overflow-x: auto;
 }
 
-pre code {
+article pre code {
   background-color: transparent;
 }
 
-hr {
+article hr {
   border: 1px dashed #e5eff5;
   margin: 50px;
 }
 
-small {
+article small {
   opacity: .7;
 }
