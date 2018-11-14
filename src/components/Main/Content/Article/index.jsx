@@ -26,6 +26,7 @@ export default (props) => (
           width: "100%",
           height: 1,
           opacity: 0,
+          // TODO: Add `config.color` support to this.
           backgroundColor: "#3eb0ef",
           transition: "width 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)",
         },
