@@ -7,6 +7,9 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query HeaderLinksQuery {
+        config: dataYaml {
+          color
+        }
         allLinksYaml {
           links: edges {
             node {
@@ -47,7 +50,7 @@ export default (props) => (
                     transform: "translateZ(0px)",
                     transition: "color .2s ease",
                     ":hover": {
-                      color: "#3eb0ef",
+                      color: data.config.color || "#3eb0ef",
                     },
                   }}>{ node.title }</li>
                 </Link>
