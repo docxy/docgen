@@ -1,0 +1,53 @@
+h2, h3, h4, h5, h6 {
+  margin-top: 50px !important;
+}
+
+h1 {
+  font-size: 2.5em !important;
+}
+h2 {
+  font-size: 2em !important;
+}
+h3 {
+  font-size: 1.6em !important;
+}
+h4 {
+  font-size: 1.3em !important;
+}
+h4, h5, h6 {
+  font-size: 1.3em !important;
+}
+
+ul, ol {
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+pre, code {
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: #e8eaec;
+  background-color: #1f1f1f;
+}
+
+pre {
+  padding: 10px 20px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+pre code {
+  background-color: transparent;
+}
+
+hr {
+  border: 1px dashed #e5eff5;
+  margin: 50px;
+}
+
+small {
+  opacity: .7;
+}
