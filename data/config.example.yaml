@@ -1,4 +1,11 @@
 ---
+# Name of the website
+# Defaults to the title
+site_name: ""
+
+# URL where the site will live
+site_url: ""
+
 # Title of the website
 # Default: `AwesomeDocs`
 title: ""
