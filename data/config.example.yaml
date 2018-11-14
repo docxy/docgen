@@ -7,15 +7,10 @@ site_name: ""
 site_url: ""
 
 # Title of the website
-# Default: `AwesomeDocs`
 title: ""
 
 # Description of the website
 description: ""
-
-# Path to the image that should be used for rich cards in various sites
-# Default: `og-image.png`
-image: ""
 
 # Path to the logo of your site
 logo: ""
