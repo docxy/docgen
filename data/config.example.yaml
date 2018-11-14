@@ -25,7 +25,3 @@ copyright: ""
 # Accent color of the site
 # Default: `#3eb0ef`
 color: ""
-
-# Dark mode or light mode?
-# Default: `light`
-theme: ""
