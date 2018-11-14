@@ -7,6 +7,9 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query SidebarLinksQuery {
+        config: dataYaml {
+          color
+        }
         allNavigationYaml {
           links: edges {
             node {
@@ -44,7 +47,7 @@ export default (props) => (
                     fontSize: "1.45rem",
                     lineHeight: "1.65rem",
                     "& > a.active": {
-                      color: "#3eb0ef",
+                      color: data.config.color || "#3eb0ef",
                       fontWeight: 500,
                     }
                   }}>
