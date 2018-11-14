@@ -22,9 +22,11 @@ export default class HTML extends React.Component {
           <meta name="generator" content="AwesomeDocs" />
 
           <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="/og-image.png" />
 
           <meta property="og:site_name" content={ config.site_name || config.title } />
           <meta property="og:url" content={ config.site_url } />
+          <meta property="og:image" content="/og-image.png" />
           <meta property="og:image:width" content="1000" />
           <meta property="og:image:height" content="524" />
           <meta property="og:type" content="website" />
