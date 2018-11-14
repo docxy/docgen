@@ -13,7 +13,10 @@ image: ""
 # Path to the logo of your site
 logo: ""
 
-# Copyright notice that would be placed in the footer.
+# Link to, GitHub issue, for example, where users can send feedback
+feedback: ""
+
+# Copyright notice that would be placed in the footer
 copyright: ""
 
 
