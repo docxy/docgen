@@ -16,7 +16,6 @@ export default (props) => (
         config: dataYaml {
           title
           description
-          image
         }
       }
     `}
