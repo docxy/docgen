@@ -23,7 +23,13 @@ export default (props) => (
         backgroundColor: "#ffffff",
         boxShadow: "0 0 5px rgba(0,0,0,.02),0 5px 22px -8px rgba(0,0,0,.1)",
       }}>
-        <h4>Hey! <span role="img" aria-label="hello">👋</span> Was this page helpful?</h4>
+        <h4 css={{
+          marginTop: "0 !important",
+        }}>
+          Hey!
+          <span role="img" aria-label="hello">👋</span>
+          Was this page helpful?
+        </h4>
         <div>
           <p>
             We're always looking to make our docs better, please let us know if
