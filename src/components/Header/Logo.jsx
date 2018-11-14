@@ -34,6 +34,7 @@ export default (props) => (
                 alt="Logo"
                 css={{
                   display: "flex",
+                  alignItems: "center",
                 }}
               />
             : data.config.title
