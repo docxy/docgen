@@ -1,43 +1,32 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+
+import * as AwesomeData from "../AwesomeData";
 
 export default (props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteMetaQuery {
-        config: dataYaml {
-          title
-          description
-        }
+  <Helmet
+    defaultTitle={ AwesomeData.config.site_name }
+    titleTemplate={
+      AwesomeData.config.site_name
+      ? "%s - " + AwesomeData.config.site_name
+      : "%s"
+    }
+    title={ props.title }
+    meta={[
+      {
+        name: "twitter:title",
+        property: "og:title",
+        content: props.title || AwesomeData.config.title
+      },
+      {
+        name: "description",
+        content: props.description || AwesomeData.config.description
+      },
+      {
+        name: "twitter:description",
+        property: "og:description",
+        content: props.description || AwesomeData.config.description
       }
-    `}
-    render={data => (
-      <Helmet
-        defaultTitle={ data.config.site_name }
-        titleTemplate={
-          data.config.site_name
-          ? "%s - " + data.config.site_name
-          : "%s"
-        }
-        title={ props.title }
-        meta={[
-          {
-            name: "twitter:title",
-            property: "og:title",
-            content: props.title || data.config.title
-          },
-          {
-            name: "description",
-            content: props.description || data.config.description
-          },
-          {
-            name: "twitter:description",
-            property: "og:description",
-            content: props.description || data.config.description
-          }
-        ]}
-      />
-    )}
+    ]}
   />
 );
