@@ -35,7 +35,7 @@ export default (props) => (
                 }
               }}>
                 <Link
-                  className={ document.location.pathname === link.link ? "active" : "" }
+                  className={ typeof document !== "undefined" && document.location.pathname === link.link ? "active" : "" }
                   to={ link.link }
                   css={{
                     display: "inline-block",
