@@ -1,0 +1,16 @@
+---
+# URL of the repository you are pushing to
+# Required
+repo: ""
+
+# Name of the branch you are pushing to
+# Default: `gh-pages`
+branch: ""
+
+# Target directory within the destination branch (relative to the root)
+# Default: `.`
+dest: ""
+
+# Commit message
+# Default: `documentation update`
+message: ""
