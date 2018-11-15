@@ -1,5 +1,6 @@
 # AwesomeDocs config data
 data/config.yaml
+data/deploy.yaml
 data/links.yaml
 data/navigation.yaml
 
