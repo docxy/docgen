@@ -3,7 +3,6 @@ module.exports = {
     "gatsby-plugin-glamor",
     "gatsby-plugin-offline",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -21,7 +20,6 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark",
-    "gatsby-transformer-sharp",
     "gatsby-transformer-yaml",
   ],
 };
