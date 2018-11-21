@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./index.css";
+import * as AwesomeData from "../../../AwesomeData";
 
 export default (props) => (
   <div css={{
@@ -15,7 +16,7 @@ export default (props) => (
       flex: "1 1 auto",
       lineHeight: "2rem",
       "& a": {
-        color: "#3eb0ef",
+        color: AwesomeData.config.color || "#3eb0ef",
         fontWeight: 500,
         position: "relative",
         "::before": {
@@ -26,8 +27,7 @@ export default (props) => (
           width: "100%",
           height: 1,
           opacity: 0,
-          // TODO: Add `config.color` support to this.
-          backgroundColor: "#3eb0ef",
+          backgroundColor: AwesomeData.config.color || "#3eb0ef",
           transition: "width 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)",
         },
         "::after": {
@@ -37,7 +37,8 @@ export default (props) => (
           left: 0,
           right: 0,
           height: 1,
-          backgroundColor: "rgba(62, 176, 239, .1)",
+          backgroundColor: AwesomeData.config.color || "#3eb0ef",
+          opacity: .1,
         },
         ":hover::before": {
           opacity: 1,
