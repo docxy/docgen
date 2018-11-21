@@ -166,13 +166,14 @@ button {
   border: 2px solid #e8eaec;
   border-radius: 3px;
   background-color: #f8fafc;
-  box-shadow: 0 0 5px rgba(0,0,0,.02),0 5px 22px -8px rgba(0,0,0,.1);
-  transition: border .2s ease-out, background .2s ease-out, background .2s ease-out;
+  box-shadow: 0 5px 10px -8px rgba(0, 0, 0, .2);
+  transition: border .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
   cursor: pointer;
 }
 button:hover {
   border: 2px solid #efefef;
   background-color: #fafafa;
+  box-shadow: 0 5px 20px -8px rgba(0, 0, 0, .2);
 }
 button:active {
   border: 2px solid #d8dadc;
