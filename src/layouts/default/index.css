@@ -179,6 +179,9 @@ button:active {
   border: 2px solid #d8dadc;
   background-color: #e8eaec;
 }
+button:focus {
+  outline: none;
+}
 
 button:disabled {
   color: grey;
