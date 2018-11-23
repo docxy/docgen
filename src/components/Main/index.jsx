@@ -11,6 +11,7 @@ export default (props) => (
     position: "relative",
     margin: "9.8rem auto 0 auto",
     padding: "0 4rem 4rem 4rem",
+    minHeight: "100vh",
     maxWidth: "128rem",
   }}>
     <Sidebar />
