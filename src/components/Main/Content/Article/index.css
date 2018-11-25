@@ -109,3 +109,20 @@ article blockquote::after {
 article blockquote p {
   margin: 0 20px;
 }
+
+article input[type="text"] {
+  padding: 10px;
+  border: 2px solid #e8eaec;
+  border-radius: 3px;
+  background-color: #f8fafc;
+  box-shadow: 0 5px 10px -8px rgba(0, 0, 0, .2);
+  transition: border .2s ease-out, background .2s ease-out;
+}
+article input[type="text"]:hover {
+  border: 2px solid #efefef;
+  background-color: #fafafa;
+}
+article input[type="text"]:active {
+  border: 2px solid #d8dadc;
+  background-color: #fafafa;
+}
