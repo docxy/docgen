@@ -33,6 +33,25 @@ article li {
   margin-bottom: 10px;
 }
 
+article kbd {
+  display: inline-block;
+  padding: 0px 4px;
+  border-radius: 3px;
+  border: 2px solid #f0f2f4;
+  color: #545f54;
+  background-color: #f4f6f8;
+  background: linear-gradient(135deg, #f4f6f8, #f0f2f4);
+  box-shadow: 0px 3px 0 0 #e8eaec;
+  font-family: Menlo, Consolas, monospace;
+  transform: translateY(-2px);
+  transition: transform .1s ease-out, box-shadow .1s ease-out;
+  cursor: pointer;
+}
+article kbd:active {
+  transform: translateY(0);
+  box-shadow: 0px 1px 0 0 #e8eaec;
+}
+
 article pre,
 article code {
   padding: 3px 5px;
