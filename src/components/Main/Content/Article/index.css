@@ -135,6 +135,22 @@ article note {
   border: 2px solid rgba(0, 0, 0, .05);
   background-color: #f5f5f5;
 }
+article note[type="tip"],
+article note[type="info"] {
+  background-color: rgba(0, 200, 255, .2);
+}
+article note[type="bug"],
+article note[type="error"],
+article note[type="danger"] {
+  background-color: rgba(255, 50, 0, .2);
+}
+article note[type="warn"],
+article note[type="warning"] {
+  background-color: rgba(255, 255, 0, .2);
+}
+article note[type="success"] {
+  background-color: rgba(0, 255, 100, .2);
+}
 article note::before {
   content: attr(type);
   display: block;
