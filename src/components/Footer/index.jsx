@@ -1,6 +1,7 @@
 import React from "react";
 
 import MetaFooter from "./MetaFooter";
+import FooterLinks from "./FooterLinks";
 
 export default (props) => (
   <footer css={{
@@ -9,6 +10,7 @@ export default (props) => (
     borderTop: "1px solid #e5eff5",
     backgroundColor: "#ffffff",
   }}>
+    <FooterLinks />
     <MetaFooter />
   </footer>
 );
