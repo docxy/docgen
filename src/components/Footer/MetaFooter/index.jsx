@@ -16,6 +16,9 @@ export default (props) => (
       justifyContent: "space-between",
       alignItems: "center",
       borderTop: "1px dashed #e5eff5",
+      "@media (max-width: 768px)": {
+        flexDirection: "column",
+      },
     }}>
       <Copyright />
       <PoweredBy />
