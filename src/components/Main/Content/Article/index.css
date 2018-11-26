@@ -126,3 +126,19 @@ article input[type="text"]:active {
   border: 2px solid #d8dadc;
   background-color: #fafafa;
 }
+
+article note {
+  display: block;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, .05);
+  background-color: #f5f5f5;
+}
+article note::before {
+  content: attr(type);
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
