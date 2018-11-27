@@ -5,7 +5,12 @@ import Feedback from "./Feedback";
 import * as AwesomeData from "../../AwesomeData";
 
 export default (props) => (
-  <div>
+  <div css={{
+    maxWidth: "calc(100% - 22rem)",
+    "@media (max-width: 768px)": {
+      maxWidth: "100%",
+    },
+  }}>
     <Article>
       { props.children }
     </Article>
