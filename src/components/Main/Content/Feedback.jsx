@@ -13,6 +13,10 @@ export default (props) => (
     borderRadius: ".5rem",
     backgroundColor: "#ffffff",
     boxShadow: "0 0 5px rgba(0,0,0,.02),0 5px 22px -8px rgba(0,0,0,.1)",
+    "@media (max-width: 768px)": {
+      padding: "4rem",
+      borderRadius: 0,
+    },
   }}>
     <h4 css={{
       marginTop: "0 !important",
