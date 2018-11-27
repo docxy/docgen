@@ -127,6 +127,21 @@ article input[type="text"]:active {
   background-color: #fafafa;
 }
 
+article abbr[title] {
+  text-decoration: none;
+  position: relative;
+}
+article abbr[title]::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background-color: black;
+  opacity: .2;
+}
+
 article note {
   display: block;
   margin: 20px 0;
