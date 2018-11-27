@@ -10,6 +10,9 @@ export default (props) => (
     width: "22rem",
     paddingRight: "4rem",
     flexShrink: 0,
+    "@media (max-width: 768px)": {
+      display: "none",
+    },
   }}>
     <div css={{
       marginRight: "-1.2rem",
