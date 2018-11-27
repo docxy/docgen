@@ -13,6 +13,9 @@ export default (props) => (
     padding: "0 4rem 4rem 4rem",
     minHeight: "100vh",
     maxWidth: "128rem",
+    "@media (max-width: 768px)": {
+      padding: "0 0 4rem 0",
+    },
   }}>
     <Sidebar />
     <Content>
