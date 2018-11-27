@@ -10,11 +10,17 @@ export default (props) => (
     borderRadius: ".5rem",
     backgroundColor: "#ffffff",
     boxShadow: "0 0 5px rgba(0,0,0,.02),0 5px 22px -8px rgba(0,0,0,.1)",
+    "@media (max-width: 768px)": {
+      borderRadius: 0,
+    },
   }}>
     <article css={{
       padding: "4rem 6rem",
       flex: "1 1 auto",
       lineHeight: "2rem",
+      "@media (max-width: 768px)": {
+        padding: "4rem",
+      },
       "& a": {
         color: AwesomeData.config.color || "#3eb0ef",
         fontWeight: 500,
