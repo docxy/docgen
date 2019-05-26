@@ -32,7 +32,7 @@
   ],
   "license": "GPL-3.0",
   "engines": {
-    "node": "10.x.x",
+    "node": "11.x.x",
     "yarn": "1.x.x"
   },
   "scripts": {
