@@ -3,6 +3,8 @@
   <p>An awesome documentation site generator made with Gatsby! So, inherently, it's blazing fast!</p>
 </div>
 
+![Awesome Screenshot](https://media.discordapp.net/attachments/280769814270574593/569475670124527637/unknown.png)
+
 ## Prerequisites
 * The latest LTS version of [Node.js]
 * [Yarn] package manager for Node.js
