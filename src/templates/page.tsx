@@ -1,15 +1,16 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 
-import Layout from "../layouts/default";
-import Helmet from "../components/Helmet";
+import Layout from "../layouts/index";
 
-export default (props) => (
+export default (props: any) => (
   <Layout>
     <Helmet
       title={ props.data.markdownRemark.frontmatter.title }
-      description={ props.data.markdownRemark.frontmatter.description }
-    />
+    >
+      <meta name="description" content={ props.data.markdownRemark.frontmatter.description } />
+    </Helmet>
     <h1>{ props.data.markdownRemark.frontmatter.title }</h1>
     <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
   </Layout>
