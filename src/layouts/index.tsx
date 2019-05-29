@@ -23,8 +23,9 @@ export default (props) => (
       <>
         <Helmet
           title={ data.contentYaml.title }
-          description= { data.contentYaml.description }
-        />
+        >
+          <meta name="description" content={ data.contentYaml.description } />
+        </Helmet>
         <Header />
         <Main>
           { props.children }
