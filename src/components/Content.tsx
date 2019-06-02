@@ -4,14 +4,15 @@ import "./content.css";
 
 export default (props) => (
   <div css={{
+    display: "flex",
     maxWidth: "calc(100% - 22rem)",
+    width: "100%",
     "@media (max-width: 768px)": {
       maxWidth: "100%",
     },
   }}>
     <div css={{
       width: "100%",
-      maxWidth: "76rem",
       borderRadius: ".5rem",
       backgroundColor: "#ffffff",
       boxShadow: "0 0 5px rgba(0,0,0,.02),0 5px 22px -8px rgba(0,0,0,.1)",
