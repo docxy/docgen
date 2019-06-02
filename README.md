@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="https://github.com/AwesomeDocs.png" alt="Awesome logo, ain't it?" height="200" />
   <h1>AwesomeDocs</h1>
   <p>An awesome documentation site generator made with Gatsby! So, inherently, it's blazing fast!</p>
 </div>
