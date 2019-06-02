@@ -37,11 +37,11 @@ article kbd {
   display: inline-block;
   padding: 0px 4px;
   border-radius: 3px;
-  border: 2px solid #f0f2f4;
-  color: #545f54;
-  background-color: #f4f6f8;
-  background: linear-gradient(135deg, #f4f6f8, #f0f2f4);
-  box-shadow: 0px 3px 0 0 #e8eaec;
+  border: 2px solid #222;
+  color: #e8eaec;
+  background-color: #333;
+  background: linear-gradient(135deg, #333, #222);
+  box-shadow: 0px 3px 0 0 #222;
   font-family: Menlo, Consolas, monospace;
   transform: translateY(-2px);
   transition: transform .1s ease-out, box-shadow .1s ease-out;
@@ -49,7 +49,7 @@ article kbd {
 }
 article kbd:active {
   transform: translateY(0);
-  box-shadow: 0px 1px 0 0 #e8eaec;
+  box-shadow: 0px 1px 0 0 #222;
 }
 
 article pre,
@@ -57,7 +57,7 @@ article code {
   padding: 3px 5px;
   border-radius: 3px;
   color: #e8eaec;
-  background-color: #1f1f1f;
+  background-color: #222;
 }
 
 article pre {
@@ -71,7 +71,7 @@ article pre code {
 }
 
 article hr {
-  border: 1px dashed #e5eff5;
+  border: 1px dashed #1a1a1a;
   margin: 50px;
 }
 
@@ -85,14 +85,14 @@ article blockquote {
   margin-right: 0;
   padding: 20px;
   border-radius: 5px;
-  background: #f5f5f5;
+  background: #1a1a1a;
 }
 article blockquote::before {
   content: "“";
   position: absolute;
   left: 5px;
   top: 25px;
-  color: rgba(0, 0, 0, .1);
+  color: rgba(255, 255, 255, .3);
   font-size: 500%;
   pointer-events: none;
 }
@@ -101,7 +101,7 @@ article blockquote::after {
   position: absolute;
   right: 5px;
   bottom: -10px;
-  color: rgba(0, 0, 0, .1);
+  color: rgba(255, 255, 255, .3);
   font-size: 500%;
   pointer-events: none;
 }
@@ -148,7 +148,7 @@ article note {
   padding: 20px;
   border-radius: 5px;
   border: 2px solid rgba(0, 0, 0, .05);
-  background-color: #f5f5f5;
+  background-color: #1a1a1a;
 }
 article note[type="tip"],
 article note[type="info"] {
