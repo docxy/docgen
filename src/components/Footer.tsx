@@ -101,7 +101,7 @@ const MetaFooter: React.FunctionComponent<IMetaFooterProps> = (props: IMetaFoote
     paddingTop: "1.6rem",
     justifyContent: "space-between",
     alignItems: "center",
-    borderTop: "1px dashed #e5eff5",
+    borderTop: "1px dashed #1a1a1a",
     "@media (max-width: 768px)": {
       flexDirection: "column",
     },
@@ -128,8 +128,8 @@ export default () => (
       <footer style={{
         display: "block",
         padding: "4vw",
-        borderTop: "1px solid #e5eff5",
-        backgroundColor: "#ffffff",
+        borderTop: "1px solid #1a1a1a",
+        backgroundColor: "#0a0a0a",
       }}>
         <section style={{
           display: "block",

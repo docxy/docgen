@@ -13,9 +13,10 @@ export default (props) => (
   }}>
     <div css={{
       width: "100%",
-      borderRadius: ".5rem",
-      backgroundColor: "#ffffff",
-      boxShadow: "0 0 5px rgba(0,0,0,.02),0 5px 22px -8px rgba(0,0,0,.1)",
+      borderRadius: ".2rem",
+      backgroundColor: "#0a0a0a",
+      boxShadow: "0 0 5px rgba(0, 0, 0, 1), 0 5px 22px -8px rgba(0, 0, 0, 1)",
+      border: "1px solid #1a1a1a",
       "@media (max-width: 768px)": {
         borderRadius: 0,
       },
