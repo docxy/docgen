@@ -3,7 +3,7 @@
   <p>An awesome documentation site generator made with Gatsby! So, inherently, it's blazing fast!</p>
 </div>
 
-![Awesome Screenshot](https://media.discordapp.net/attachments/280769814270574593/569475670124527637/unknown.png)
+![Awesome Screenshot](https://user-images.githubusercontent.com/19631364/58768277-5c43cc80-85b6-11e9-86cf-da765a66a7bd.png)
 
 ## Prerequisites
 * The latest LTS version of [Node.js]
