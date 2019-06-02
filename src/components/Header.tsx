@@ -49,7 +49,7 @@ const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLog
         display: "block",
         width: 1,
         height: 23,
-        background: "#d3e4ee",
+        background: "#333",
         transform: "rotate(25deg)",
       },
     }}>
@@ -79,10 +79,10 @@ export default (props) => (
         right: 0,
         left: 0,
         marginBottom: "4rem",
-        backgroundColor: "#FFFFFF",
-        boxShadow: "0 0 3px rgba(0,0,0,.03),0 3px 46px rgba(0,0,0,.07)",
+        backgroundColor: "#0a0a0a",
+        borderBottom: "1px solid #1a1a1a",
+        boxShadow: "0 0 3px rgba(0, 0, 0, 1), 0 3px 46px rgba(0, 0, 0, 1)",
         zIndex: 500,
-        opacity: .95,
       }}>
         <div css={{
           display: "flex",
