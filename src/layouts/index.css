@@ -9,14 +9,14 @@
 
 html {
   overflow-x: none;
-  background-color: #f8fafc;
+  background-color: #000000;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 65%;
   line-height: 1.15;
 }
 
 body {
-  color: #343f44;
+  color: white;
   font-size: 1.35rem;
   display: flex;
   flex-direction: column;
