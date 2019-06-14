@@ -58,18 +58,57 @@ const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLog
   </div>
 );
 
+interface IHeaderLink {
+  name: string;
+  link: string;
+}
+
+interface IHeaderLinksProps {
+  links: IHeaderLink[]
+}
+
+const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ links }) => (
+  <ul css={{
+    display: "flex",
+    margin: 0,
+    padding: 0,
+    listStyle: "none",
+    "@media (max-width: 768px)": {
+      display: "none",
+    },
+  }}>
+    {
+      links.map((node: IHeaderLink, i: number) => (
+        <li key={ i }>
+          <Link to={ node.link } css={{
+            padding: "20px 10px",
+            ":hover": {
+              color: "#3eb0ef",
+            }
+          }}>
+            { node.name }
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+);
 
 // Header
 
-export default (props) => (
+export default () => (
   <StaticQuery
     query={graphql`
       query HeaderLogoQuery {
         contentYaml {
           title
           logo
+          links {
+            name
+            link
+          }
         }
-      }  
+      }
     `}
     render={ data => (
       <header css={{
@@ -95,6 +134,7 @@ export default (props) => (
           flex: "1 1 auto",
         }}>
           <HeaderLogo title={ data.contentYaml.title } logo={ data.contentYaml.logo } />
+          <HeaderLinks links={ data.contentYaml.links } />
         </div>
       </header>
     )}
