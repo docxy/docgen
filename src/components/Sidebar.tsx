@@ -45,6 +45,7 @@ const SidebarSection: React.FunctionComponent<ISidebarSectionProps> = ({ title, 
     <div css={{
       fontSize: "1.5rem",
       paddingBottom: 10,
+      fontWeight: 500,
     }}>
       { title }
     </div>
