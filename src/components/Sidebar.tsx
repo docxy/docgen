@@ -33,6 +33,36 @@ const SidebarItem: React.FunctionComponent<ISidebarItemProps> = ({ title, link }
 );
 
 
+interface ISidebarSectionProps {
+  title: string;
+  links: any;
+}
+
+const SidebarSection: React.FunctionComponent<ISidebarSectionProps> = ({ title, links }) => (
+  <li css={{
+    paddingBottom: 20,
+  }}>
+    <div css={{
+      fontSize: "1.5rem",
+      paddingBottom: 10,
+    }}>
+      { title }
+    </div>
+    <ul css={{
+      margin: 0,
+      padding: 0,
+      listStyle: "none",
+    }}>
+      {
+        links.map((node: any, i: number) => (
+          <SidebarItem key={ i } title={ node.name } link={ node.link } />
+        ))
+      }
+    </ul>
+  </li>
+);
+
+
 export default (props) => (
   <StaticQuery
     query={graphql`
@@ -45,6 +75,15 @@ export default (props) => (
             fields {
               slug
             }
+          }
+        }
+        contentYaml {
+          navigation {
+            links {
+              name
+              link
+            }
+            section
           }
         }
       }
@@ -74,9 +113,13 @@ export default (props) => (
               listStyle: "none",
             }}>
               {
-                data.allMarkdownRemark.nodes.filter((node: any) => node.fields.slug !== "/404/").map((node: any, i: number) => (
-                  <SidebarItem key={ i } title={ node.frontmatter.title } link={ node.fields.slug } />
-                ))
+                data.contentYaml.navigation
+                ? data.contentYaml.navigation.map((node: any, i: number) => (
+                    <SidebarSection key={ i } title={ node.section } links={ node.links } />
+                  ))
+                : data.allMarkdownRemark.nodes.filter((node: any) => node.fields.slug !== "/404/").map((node: any, i: number) => (
+                    <SidebarItem key={ i } title={ node.frontmatter.title } link={ node.fields.slug } />
+                  ))
               }
             </ol>
           </nav>
