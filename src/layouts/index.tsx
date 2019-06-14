@@ -17,7 +17,7 @@ export default (props) => (
           title
           description
         }
-      }  
+      }
     `}
     render={ data => (
       <>

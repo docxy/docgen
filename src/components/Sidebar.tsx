@@ -96,12 +96,19 @@ export default (props) => (
         paddingRight: "4rem",
         flexShrink: 0,
         "@media (max-width: 768px)": {
-          display: "none",
+          display: props.open ? "block" : "none",
+          position: "fixed",
+          top: 60,
+          width: "100%",
+          height: "calc(100% - 60px)",
+          padding: 30,
+          backgroundColor: "#111",
+          overflowY: "auto",
+          zIndex: 400,
         },
       }}>
         <div css={{
           marginRight: "-1.2rem",
-          position: "sticky",
           top: "10rem",
         }}>
           <nav css={{
