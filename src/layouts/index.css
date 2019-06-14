@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
 
 *, ::before, ::after {
   box-sizing: border-box;
@@ -26,11 +26,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 30px;
-  font-weight: 200;
-  line-height: initial;
-}
-h3, h4, h5, h6 {
   font-weight: 500;
+  line-height: initial;
 }
 
 p {
@@ -52,6 +49,7 @@ button {
   border: 2px solid #e8eaec;
   border-radius: 3px;
   background-color: #f8fafc;
+  font-weight: 500;
   box-shadow: 0 5px 10px -8px rgba(0, 0, 0, .2);
   transition: border .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
   cursor: pointer;
