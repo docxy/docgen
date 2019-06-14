@@ -81,3 +81,7 @@ button:disabled:active {
   border: 2px solid #e8eaec;
   background-color: #f8fafc;
 }
+
+code {
+  font-family: Consolas, monospace;
+}
