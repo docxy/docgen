@@ -6,8 +6,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Main from "../components/Main";
 
-import "./normalize.css";
 import "./index.css";
+import "./normalize.css";
 
 export default (props) => (
   <StaticQuery
@@ -19,7 +19,7 @@ export default (props) => (
         }
       }
     `}
-    render={ data => (
+    render={(data: any) => (
       <>
         <Helmet
           title={ data.contentYaml.title }
