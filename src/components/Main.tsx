@@ -1,21 +1,21 @@
 import React from "react";
 
-import Sidebar from "./Sidebar";
 import Content from "./Content";
+import Sidebar from "./Sidebar";
 import SidebarToggle from "./SidebarToggle";
 
 export default class Main extends React.PureComponent {
-  state = {
+  private state = {
     sidebar: false,
   };
 
-  toggleSidebar = () => {
+  private toggleSidebar = () => {
     this.setState({
       sidebar: !this.state.sidebar,
     });
-  };
+  }
 
-  render = () => {
+  public render = () => {
     return (
       <main css={{
         display: "flex",
