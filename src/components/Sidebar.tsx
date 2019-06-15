@@ -114,6 +114,9 @@ export default (props) => (
         <div css={{
           marginRight: "-1.2rem",
           top: "10rem",
+          "@media (min-width: 769px)": {
+            position: "sticky",
+          },
         }}>
           <nav css={{
             display: "block",
