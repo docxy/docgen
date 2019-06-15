@@ -124,7 +124,7 @@ export default () => (
         }
       }
     `}
-    render={data => (
+    render={(data: any) => (
       <footer style={{
         display: "block",
         padding: "4vw",
