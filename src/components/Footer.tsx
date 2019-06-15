@@ -122,7 +122,7 @@ export default () => (
           feedback
           copyright
         }
-      }  
+      }
     `}
     render={data => (
       <footer style={{
