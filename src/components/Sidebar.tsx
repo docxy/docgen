@@ -16,7 +16,7 @@ const SidebarItem: React.FunctionComponent<ISidebarItemProps> = ({ title, link }
     "& > a.active": {
       color: "#3eb0ef",
       fontWeight: 500,
-    }
+    },
   }}>
     <Link
       className={ typeof document !== "undefined" && document.location.pathname === link ? "active" : "" }
@@ -92,7 +92,7 @@ export default (props) => (
         }
       }
     `}
-    render={ data => (
+    render={(data: any) => (
       <div css={{
         display: "block",
         position: "relative",
