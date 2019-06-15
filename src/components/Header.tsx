@@ -66,7 +66,7 @@ interface IHeaderLink {
 }
 
 interface IHeaderLinksProps {
-  links: IHeaderLink[]
+  links: IHeaderLink[];
 }
 
 const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ links }) => (
@@ -86,7 +86,7 @@ const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ links }) => (
             padding: "20px 10px",
             ":hover": {
               color: "#3eb0ef",
-            }
+            },
           }}>
             { node.name }
           </Link>
@@ -112,7 +112,7 @@ export default () => (
         }
       }
     `}
-    render={ data => (
+    render={(data: any) => (
       <header css={{
         display: "block",
         position: "fixed",
