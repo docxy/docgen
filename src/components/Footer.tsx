@@ -1,6 +1,7 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 
+import Link from "./Link";
 import Logo from "./Logo";
 
 
@@ -34,9 +35,9 @@ const FeedbackContainer: React.FunctionComponent<IFeedbackContainerProps> = (pro
           not!
         </p>
         <div>
-          <a href={ props.url } title="Feedback">
+          <Link to={ props.url } title="Give Feedback">
             <button>Send Feedback</button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
