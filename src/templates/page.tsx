@@ -9,6 +9,8 @@ export default (props: any) => (
     description={ props.data.markdownRemark.frontmatter.description }
   >
     <h1>{ props.data.markdownRemark.frontmatter.title }</h1>
+    <p>{ props.data.markdownRemark.frontmatter.description }</p>
+    <hr />
     <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
   </Layout>
 );
