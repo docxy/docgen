@@ -28,27 +28,26 @@ color: ""
 
 
 # List of links that will be shown in the header
-# Example:
-# - name: "Website"
-#   link: "https://awesomedocs.traction.one"
-# - name: "GitHub"
-#   link: "https://github.com/AwesomeDocs"
-links: null
+# This is just an example structure
+# You can modify it any way you like
+links:
+  - name: "Website"
+    link: "https://awesomedocs.traction.one"
+  - name: "GitHub"
+    link: "https://github.com/AwesomeDocs"
 
 
-# Custom configuration for sidebar navigation
-# By default, it'll auto generate from your content.
-# Example:
-# - section: "Section 1"
-#     links:
-#       - name: "Intro"
-#         link: "/intro"
-#       - name: "Guide"
-#         link: "/guide"
-# - section: "Section 2"
-#   links:
-#     - name: "FAQ"
-#       link: "/faq"
-#     - name: "Help"
-#       link: "/help"
-navigation: null
+# Structure for sidebar navigation
+# This is just an example structure
+# You can modify it any way you like
+navigation:
+  - section: "Intro"
+    links:
+        - name: "Home"
+          link: "/"
+  - section: "External"
+    links:
+      - name: "FAQ"
+        link: "/faq"
+      - name: "Help"
+        link: "/help"
