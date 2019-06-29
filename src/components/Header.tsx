@@ -81,7 +81,7 @@ const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ color, links 
     },
   }}>
     {
-      links.map((node: IHeaderLink, i: number) => (
+      links && links.map((node: IHeaderLink, i: number) => (
         <li key={ i }>
           <Link to={ node.link } css={{
             padding: "20px 10px",
