@@ -1,0 +1,53 @@
+---
+# Name of the website
+# Defaults to the title (see below)
+site_name: ""
+
+# URL where the site will live
+site_url: ""
+
+# Title of the website
+title: ""
+
+# Description of the website
+description: ""
+
+# URL to the logo of your site
+logo: ""
+
+# Link to, say GitHub issues, where users can send feedback
+feedback: ""
+
+# Copyright notice that would be placed in the footer
+copyright: "Copyright 2019"
+
+
+# Accent color of the site
+# Default: `#3eb0ef`
+color: ""
+
+
+# List of links that will be shown in the header
+# This is just an example structure
+# You can modify it any way you like
+links:
+  - name: "Website"
+    link: "https://awesomedocs.traction.one"
+  - name: "GitHub"
+    link: "https://github.com/AwesomeDocs"
+
+
+# Structure for sidebar navigation
+# This is just an example structure
+# You can modify it any way you like
+navigation:
+  - section: "Intro"
+    links:
+        - name: "Home"
+          link: "/"
+  - section: "External"
+    links:
+      - name: "FAQ"
+        link: "/faq"
+      - name: "Help"
+        link: "/help"

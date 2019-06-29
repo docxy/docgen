@@ -1,9 +1,8 @@
 <div align="center">
+  <img src="https://github.com/AwesomeDocs.png" alt="Awesome logo, ain't it?" height="200" />
   <h1>AwesomeDocs</h1>
   <p>An awesome documentation site generator made with Gatsby! So, inherently, it's blazing fast!</p>
 </div>
-
-![Awesome Screenshot](https://media.discordapp.net/attachments/280769814270574593/569475670124527637/unknown.png)
 
 ## Prerequisites
 * The latest LTS version of [Node.js]
@@ -24,11 +23,11 @@
 5.  **(OPTIONAL)** Anything you put in the `static` directory will be directly
     available in the root of your website. It is the right place to put your
     `favicon.ico` or `CNAME` file.
-6.  **Check if the site looks fine by starting a development server**  
+6.  **Check if the site looks fine by starting a development server**
     ```bash
     awesomedocs serve
     ```
-7.  **Build the documentation when you're ready for deployment**  
+7.  **Build the documentation when you're ready for deployment**
     ```bash
     awesomedocs build
     ```

@@ -6,10 +6,10 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Main from "../components/Main";
 
-import "./normalize.css";
 import "./index.css";
+import "./normalize.css";
 
-export default (props) => (
+export default (props: any) => (
   <StaticQuery
     query={graphql`
       query DefaultLayoutQuery {
@@ -17,14 +17,16 @@ export default (props) => (
           title
           description
         }
-      }  
+      }
     `}
-    render={ data => (
+    render={(data: any) => (
       <>
         <Helmet
-          title={ data.contentYaml.title }
+          defaultTitle={ data.contentYaml.title }
+          title={ props.title || data.contentYaml.title }
+          titleTemplate={ "%s - " + data.contentYaml.title }
         >
-          <meta name="description" content={ data.contentYaml.description } />
+          <meta name="description" content={ props.description || data.contentYaml.description } />
         </Helmet>
         <Header />
         <Main>

@@ -1,5 +1,7 @@
-import { graphql, Link, StaticQuery } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 import React from "react";
+
+import Link from "./Link";
 
 
 // Header logo
@@ -33,7 +35,7 @@ const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLog
               alignItems: "center",
             }}
           />
-        : props.title
+        : props.title || "Awesome"
       }
     </Link>
 
@@ -49,7 +51,7 @@ const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLog
         display: "block",
         width: 1,
         height: 23,
-        background: "#d3e4ee",
+        background: "#333",
         transform: "rotate(25deg)",
       },
     }}>
@@ -58,20 +60,61 @@ const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLog
   </div>
 );
 
+interface IHeaderLink {
+  name: string;
+  link: string;
+}
+
+interface IHeaderLinksProps {
+  color: string;
+  links: IHeaderLink[];
+}
+
+const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ color, links }) => (
+  <ul css={{
+    display: "flex",
+    margin: 0,
+    padding: 0,
+    listStyle: "none",
+    "@media (max-width: 768px)": {
+      display: "none",
+    },
+  }}>
+    {
+      links && links.map((node: IHeaderLink, i: number) => (
+        <li key={ i }>
+          <Link to={ node.link } css={{
+            padding: "20px 10px",
+            ":hover": {
+              color: color,
+            },
+          }}>
+            { node.name }
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+);
 
 // Header
 
-export default (props) => (
+export default () => (
   <StaticQuery
     query={graphql`
       query HeaderLogoQuery {
         contentYaml {
           title
+          color
           logo
+          links {
+            name
+            link
+          }
         }
-      }  
+      }
     `}
-    render={ data => (
+    render={(data: any) => (
       <header css={{
         display: "block",
         position: "fixed",
@@ -79,10 +122,10 @@ export default (props) => (
         right: 0,
         left: 0,
         marginBottom: "4rem",
-        backgroundColor: "#FFFFFF",
-        boxShadow: "0 0 3px rgba(0,0,0,.03),0 3px 46px rgba(0,0,0,.07)",
+        backgroundColor: "#0a0a0a",
+        borderBottom: "1px solid #1a1a1a",
+        boxShadow: "0 0 3px rgba(0, 0, 0, 1), 0 3px 46px rgba(0, 0, 0, 1)",
         zIndex: 500,
-        opacity: .95,
       }}>
         <div css={{
           display: "flex",
@@ -95,6 +138,7 @@ export default (props) => (
           flex: "1 1 auto",
         }}>
           <HeaderLogo title={ data.contentYaml.title } logo={ data.contentYaml.logo } />
+          <HeaderLinks color={ data.contentYaml.color || "#3eb0ef" } links={ data.contentYaml.links } />
         </div>
       </header>
     )}
