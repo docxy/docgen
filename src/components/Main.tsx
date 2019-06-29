@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import SidebarToggle from "./SidebarToggle";
 
 export default class Main extends React.PureComponent {
-  private state = {
+  state = {
     sidebar: false,
   };
 
