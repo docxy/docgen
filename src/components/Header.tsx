@@ -35,7 +35,7 @@ const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLog
               alignItems: "center",
             }}
           />
-        : props.title
+        : props.title || "Awesome"
       }
     </Link>
 
