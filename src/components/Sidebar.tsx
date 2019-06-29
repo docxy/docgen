@@ -5,16 +5,17 @@ import Link from "./Link";
 
 
 interface ISidebarItemProps {
+  color: string;
   title: string;
   link: string;
 }
 
-const SidebarItem: React.FunctionComponent<ISidebarItemProps> = ({ title, link }) => (
+const SidebarItem: React.FunctionComponent<ISidebarItemProps> = ({ color, title, link }) => (
   <li css={{
     fontSize: "1.45rem",
     lineHeight: "1.65rem",
     "& > a.active": {
-      color: "#3eb0ef",
+      color: color || "#3eb0ef",
       fontWeight: 500,
     },
   }}>
@@ -37,11 +38,12 @@ const SidebarItem: React.FunctionComponent<ISidebarItemProps> = ({ title, link }
 
 
 interface ISidebarSectionProps {
+  color: string;
   title: string;
   links: any;
 }
 
-const SidebarSection: React.FunctionComponent<ISidebarSectionProps> = ({ title, links }) => (
+const SidebarSection: React.FunctionComponent<ISidebarSectionProps> = ({ color, title, links }) => (
   <li css={{
     paddingBottom: 20,
   }}>
@@ -59,7 +61,7 @@ const SidebarSection: React.FunctionComponent<ISidebarSectionProps> = ({ title, 
     }}>
       {
         links.map((node: any, i: number) => (
-          <SidebarItem key={ i } title={ node.name } link={ node.link } />
+          <SidebarItem key={ i } color={ color } title={ node.name } link={ node.link } />
         ))
       }
     </ul>
@@ -82,6 +84,7 @@ export default (props) => (
           }
         }
         contentYaml {
+          color
           navigation {
             links {
               name
@@ -129,10 +132,10 @@ export default (props) => (
               {
                 data.contentYaml.navigation
                 ? data.contentYaml.navigation.map((node: any, i: number) => (
-                    <SidebarSection key={ i } title={ node.section } links={ node.links } />
+                    <SidebarSection key={ i } color={ data.contentYaml.color } title={ node.section } links={ node.links } />
                   ))
                 : data.allMarkdownRemark.nodes.filter((node: any) => node.fields.slug !== "/404/").map((node: any, i: number) => (
-                    <SidebarItem key={ i } title={ node.frontmatter.title } link={ node.fields.slug } />
+                    <SidebarItem key={ i } color={ data.contentYaml.color } title={ node.frontmatter.title } link={ node.fields.slug } />
                   ))
               }
             </ol>

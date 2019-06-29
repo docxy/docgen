@@ -66,10 +66,11 @@ interface IHeaderLink {
 }
 
 interface IHeaderLinksProps {
+  color: string;
   links: IHeaderLink[];
 }
 
-const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ links }) => (
+const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ color, links }) => (
   <ul css={{
     display: "flex",
     margin: 0,
@@ -85,7 +86,7 @@ const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ links }) => (
           <Link to={ node.link } css={{
             padding: "20px 10px",
             ":hover": {
-              color: "#3eb0ef",
+              color: color,
             },
           }}>
             { node.name }
@@ -104,6 +105,7 @@ export default () => (
       query HeaderLogoQuery {
         contentYaml {
           title
+          color
           logo
           links {
             name
@@ -136,7 +138,7 @@ export default () => (
           flex: "1 1 auto",
         }}>
           <HeaderLogo title={ data.contentYaml.title } logo={ data.contentYaml.logo } />
-          <HeaderLinks links={ data.contentYaml.links } />
+          <HeaderLinks color={ data.contentYaml.color || "#3eb0ef" } links={ data.contentYaml.links } />
         </div>
       </header>
     )}
