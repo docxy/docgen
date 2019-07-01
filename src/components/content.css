@@ -70,6 +70,10 @@ article pre code {
   background-color: transparent;
 }
 
+article img {
+  width: 100%;
+}
+
 article hr {
   border: 1px dashed #1a1a1a;
   margin: 50px;
