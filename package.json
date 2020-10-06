@@ -11,7 +11,7 @@
     "start": "./node_modules/.bin/gatsby develop",
     "test": "yarn lint && yarn transpile",
     "transpile": "./node_modules/.bin/tsc",
-    "lint": "yarn eslint . --ext .js --ext .ts --fix"
+    "lint": "./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "gatsby": "^2.7.1",
