@@ -8,10 +8,10 @@
   "repository": "https://github.com/AwesomeDocs/AwesomeDocs",
   "scripts": {
     "build": "./node_modules/.bin/gatsby build",
-    "lint": "./node_modules/.bin/tslint -p tsconfig.json",
     "start": "./node_modules/.bin/gatsby develop",
     "test": "yarn lint && yarn transpile",
-    "transpile": "./node_modules/.bin/tsc"
+    "transpile": "./node_modules/.bin/tsc",
+    "lint": "yarn eslint . --ext .js --ext .ts --fix"
   },
   "dependencies": {
     "gatsby": "^2.7.1",
@@ -36,7 +36,9 @@
     "@types/react-dom": "^16.0.7",
     "@types/react-helmet": "^5.0.7",
     "@types/yaml": "^1.0.2",
-    "gh-pages": "^2.0.0",
-    "tslint": "^5.11.0"
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.10.0",
+    "gh-pages": "^2.0.0"
   }
 }
