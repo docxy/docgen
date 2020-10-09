@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
 import Link from "./Link";
@@ -8,7 +8,7 @@ import Logo from "./Logo";
 // Feedback Container
 
 interface IFeedbackContainerProps {
-  url: string;
+    url: string;
 }
 
 const FeedbackContainer: React.FunctionComponent<IFeedbackContainerProps> = (props: IFeedbackContainerProps) => (
@@ -48,7 +48,7 @@ const FeedbackContainer: React.FunctionComponent<IFeedbackContainerProps> = (pro
 // Copyright Notice
 
 interface ICopyrightNoticeProps {
-  notice: string;
+    notice: string;
 }
 
 const CopyrightNotice: React.FunctionComponent<ICopyrightNoticeProps> = (props: ICopyrightNoticeProps) => (
@@ -82,7 +82,7 @@ const PoweredByAwesomeDocs: React.FunctionComponent = () => (
             <span style={{
                 marginRight: 8,
             }}>
-        Powered by
+                Powered by
             </span>
             <Logo size={ 25 } />
         </a>
@@ -93,7 +93,7 @@ const PoweredByAwesomeDocs: React.FunctionComponent = () => (
 // Meta Footer
 
 interface IMetaFooterProps {
-  copyright: string;
+    copyright: string;
 }
 
 const MetaFooter: React.FunctionComponent<IMetaFooterProps> = (props: IMetaFooterProps) => (
@@ -115,33 +115,32 @@ const MetaFooter: React.FunctionComponent<IMetaFooterProps> = (props: IMetaFoote
 
 // Footer
 
-export default () => (
-    <StaticQuery
-        query={graphql`
-      query {
-        contentYaml {
-          feedback
-          copyright
+export default (): React.ReactElement => {
+    const data = useStaticQuery(graphql`
+        query {
+            contentYaml {
+                feedback
+                copyright
+            }
         }
-      }
-    `}
-        render={(data: any) => (
-            <footer style={{
+    `);
+
+    return (
+        <footer style={{
+            display: "block",
+            padding: "4vw",
+            borderTop: "1px solid #1a1a1a",
+            backgroundColor: "#0a0a0a",
+        }}>
+            <section style={{
                 display: "block",
-                padding: "4vw",
-                borderTop: "1px solid #1a1a1a",
-                backgroundColor: "#0a0a0a",
+                margin: "0 auto",
+                padding: "0 4rem",
+                maxWidth: "128rem",
             }}>
-                <section style={{
-                    display: "block",
-                    margin: "0 auto",
-                    padding: "0 4rem",
-                    maxWidth: "128rem",
-                }}>
-                    <FeedbackContainer url={ data.contentYaml.feedback } />
-                    <MetaFooter copyright={ data.contentYaml.copyright } />
-                </section>
-            </footer>
-        )}
-    />
-);
+                <FeedbackContainer url={ data.contentYaml.feedback } />
+                <MetaFooter copyright={ data.contentYaml.copyright } />
+            </section>
+        </footer>
+    );
+};

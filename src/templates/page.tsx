@@ -3,7 +3,7 @@ import React from "react";
 
 import Layout from "../layouts/index";
 
-export default (props: any) => (
+export default (props: { data: any }): React.ReactElement => (
     <Layout
         title={ props.data.markdownRemark.frontmatter.title }
         description={ props.data.markdownRemark.frontmatter.description }
@@ -16,13 +16,13 @@ export default (props: any) => (
 );
 
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        description
-      }
+    query($slug: String!) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
+            html
+            frontmatter {
+                title
+                description
+            }
+        }
     }
-  }
 `;

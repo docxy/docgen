@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
 import Link from "./Link";
@@ -7,8 +7,8 @@ import Link from "./Link";
 // Header logo
 
 interface IHeaderLogoProps {
-  title: string;
-  logo: string;
+    title: string;
+    logo: string;
 }
 
 const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLogoProps) => (
@@ -61,13 +61,13 @@ const HeaderLogo: React.FunctionComponent<IHeaderLogoProps> = (props: IHeaderLog
 );
 
 interface IHeaderLink {
-  name: string;
-  link: string;
+    name: string;
+    link: string;
 }
 
 interface IHeaderLinksProps {
-  color: string;
-  links: IHeaderLink[];
+    color: string;
+    links: IHeaderLink[];
 }
 
 const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ color, links }) => (
@@ -99,48 +99,47 @@ const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = ({ color, links 
 
 // Header
 
-export default () => (
-    <StaticQuery
-        query={graphql`
-      query HeaderLogoQuery {
-        contentYaml {
-          title
-          color
-          logo
-          links {
-            name
-            link
-          }
+export default (): React.ReactElement => {
+    const data = useStaticQuery(graphql`
+        query HeaderLogoQuery {
+            contentYaml {
+                title
+                color
+                logo
+                links {
+                    name
+                    link
+                }
+            }
         }
-      }
-    `}
-        render={(data: any) => (
-            <header css={{
-                display: "block",
-                position: "fixed",
-                top: 0,
-                right: 0,
-                left: 0,
-                marginBottom: "4rem",
-                backgroundColor: "#0a0a0a",
-                borderBottom: "1px solid #1a1a1a",
-                boxShadow: "0 0 3px rgba(0, 0, 0, 1), 0 3px 46px rgba(0, 0, 0, 1)",
-                zIndex: 500,
+    `);
+
+    return (
+        <header css={{
+            display: "block",
+            position: "fixed",
+            top: 0,
+            right: 0,
+            left: 0,
+            marginBottom: "4rem",
+            backgroundColor: "#0a0a0a",
+            borderBottom: "1px solid #1a1a1a",
+            boxShadow: "0 0 3px rgba(0, 0, 0, 1), 0 3px 46px rgba(0, 0, 0, 1)",
+            zIndex: 500,
+        }}>
+            <div css={{
+                display: "flex",
+                maxWidth: "128rem",
+                margin: "0 auto",
+                padding: ".8rem 4rem",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "noWrap",
+                flex: "1 1 auto",
             }}>
-                <div css={{
-                    display: "flex",
-                    maxWidth: "128rem",
-                    margin: "0 auto",
-                    padding: ".8rem 4rem",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    flexWrap: "noWrap",
-                    flex: "1 1 auto",
-                }}>
-                    <HeaderLogo title={ data.contentYaml.title } logo={ data.contentYaml.logo } />
-                    <HeaderLinks color={ data.contentYaml.color || "#3eb0ef" } links={ data.contentYaml.links } />
-                </div>
-            </header>
-        )}
-    />
-);
+                <HeaderLogo title={ data.contentYaml.title } logo={ data.contentYaml.logo } />
+                <HeaderLinks color={ data.contentYaml.color || "#3eb0ef" } links={ data.contentYaml.links } />
+            </div>
+        </header>
+    );
+};
