@@ -1,33 +1,39 @@
 import { Link as GatsbyLink } from "gatsby";
 import React from "react";
 
-export default (props: any) => {
-    if (props.to === "") {
+interface LinkProps {
+    to: string;
+}
+
+const Link: React.FunctionComponent<LinkProps> = ({ children, to, ...props }) => {
+    if (to === "") {
         return (
             <a { ...props }>
-                { props.children }
+                { children }
             </a>
         );
     }
 
-    const internal = /^\/(?!\/)/.test(props.to);
+    const internal = /^\/(?!\/)/.test(to);
 
     if (internal) {
         return (
-            <GatsbyLink to={ props.to } { ...props }>
-                { props.children }
+            <GatsbyLink to={ to } { ...props }>
+                { children }
             </GatsbyLink>
         );
     }
 
     return (
         <a
-            href={ props.to }
+            href={ to }
             target="_blank"
             rel="noopener noreferrer"
             { ...props }
         >
-            { props.children }
+            { children }
         </a>
     );
 };
+
+export default Link;

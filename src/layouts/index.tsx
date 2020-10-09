@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 
@@ -9,31 +9,37 @@ import Main from "../components/Main";
 import "./index.css";
 import "./normalize.css";
 
-export default (props: any) => (
-    <StaticQuery
-        query={graphql`
-      query DefaultLayoutQuery {
-        contentYaml {
-          title
-          description
+interface DefaultLayoutProps {
+    title: string;
+    description: string;
+}
+
+const DefaultLayout: React.FunctionComponent<DefaultLayoutProps> = ({ children, title, description }) => {
+    const data = useStaticQuery(graphql`
+        query DefaultLayoutQuery {
+            contentYaml {
+                title
+                description
+            }
         }
-      }
-    `}
-        render={(data: any) => (
-            <>
-                <Helmet
-                    defaultTitle={ data.contentYaml.title }
-                    title={ props.title || data.contentYaml.title }
-                    titleTemplate={ "%s - " + data.contentYaml.title }
-                >
-                    <meta name="description" content={ props.description || data.contentYaml.description } />
-                </Helmet>
-                <Header />
-                <Main>
-                    { props.children }
-                </Main>
-                <Footer />
-            </>
-        )}
-    />
-);
+    `);
+
+    return (
+        <>
+            <Helmet
+                defaultTitle={ data.contentYaml.title }
+                title={ title || data.contentYaml.title }
+                titleTemplate={ "%s - " + data.contentYaml.title }
+            >
+                <meta name="description" content={ description || data.contentYaml.description } />
+            </Helmet>
+            <Header />
+            <Main>
+                { children }
+            </Main>
+            <Footer />
+        </>
+    );
+};
+
+export default DefaultLayout;

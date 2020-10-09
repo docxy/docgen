@@ -16,8 +16,8 @@ const CrossIcon: React.FunctionComponent = () => (
 );
 
 interface ISidebarToggleProps {
-  open: boolean;
-  onClickHandler: any;
+    open: boolean;
+    onClickHandler: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 const SidebarToggle: React.FunctionComponent<ISidebarToggleProps> = ({ open, onClickHandler }) => (
