@@ -1,78 +1,13 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 
 import Link from "./Link";
-
-
-interface ISidebarItemProps {
-    color: string;
-    title: string;
-    link: string;
-}
-
-const SidebarItem: React.FunctionComponent<ISidebarItemProps> = ({ color, title, link }) => (
-    <li css={{
-        fontSize: "1.45rem",
-        lineHeight: "1.65rem",
-        "& > a.active": {
-            color: color || "#3eb0ef",
-            fontWeight: 500,
-        },
-    }}>
-        <Link
-            className={ typeof document !== "undefined" && document.location.pathname === link ? "active" : "" }
-            to={ link }
-            css={{
-                display: "inline-block",
-                width: "100%",
-                height: "100%",
-                padding: "6px 0",
-                color: "#738a94",
-                lineHeight: "1.5em",
-            }}
-        >
-            { title }
-        </Link>
-    </li>
-);
-
-
-interface ISidebarSectionProps {
-    color: string;
-    title: string;
-    links: unknown[];
-}
-
-const SidebarSection: React.FunctionComponent<ISidebarSectionProps> = ({ color, title, links }) => (
-    <li css={{
-        paddingBottom: 20,
-    }}>
-        <div css={{
-            fontSize: "1.5rem",
-            paddingBottom: 10,
-            fontWeight: 500,
-        }}>
-            { title }
-        </div>
-        <ul css={{
-            margin: 0,
-            padding: 0,
-            listStyle: "none",
-        }}>
-            {
-                links.map((node: any, i: number) => (
-                    <SidebarItem key={ i } color={ color } title={ node.name } link={ node.link } />
-                ))
-            }
-        </ul>
-    </li>
-);
 
 interface SidebarProps {
     open: boolean;
 }
 
-const Sidebar: React.FunctionComponent<SidebarProps> = ({ open }) => {
+export default ({ open }: SidebarProps): React.ReactElement => {
     const data = useStaticQuery(graphql`
         query SidebarQuery {
             allMarkdownRemark {
@@ -86,7 +21,6 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({ open }) => {
                 }
             }
             contentYaml {
-                color
                 navigation {
                     links {
                         name
@@ -100,52 +34,73 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({ open }) => {
 
     return (
         <div css={{
-            display: "block",
-            position: "relative",
-            width: "22rem",
-            paddingRight: "4rem",
-            flexShrink: 0,
+            flex: 1,
+            minWidth: 250,
             "@media (max-width: 768px)": {
                 display: open ? "block" : "none",
                 position: "fixed",
-                top: 60,
+                top: 0,
+                left: 0,
                 width: "100%",
-                height: "calc(100% - 60px)",
+                height: "100%",
                 padding: 30,
-                backgroundColor: "#111",
+                backgroundColor: "var(--background)",
                 overflowY: "auto",
-                zIndex: 400,
+                zIndex: 69,
             },
         }}>
-            <div css={{
-                marginRight: "-1.2rem",
-                top: "10rem",
+            <nav css={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 25,
                 "@media (min-width: 769px)": {
+                    top: 100,
                     position: "sticky",
                 },
             }}>
-                <nav css={{
-                    display: "block",
-                }}>
-                    <ol css={{
-                        margin: 0,
-                        padding: 0,
-                        listStyle: "none",
-                    }}>
-                        {
-                            data.contentYaml.navigation
-                                ? data.contentYaml.navigation.map((node: any, i: number) => (
-                                    <SidebarSection key={ i } color={ data.contentYaml.color } title={ node.section } links={ node.links } />
-                                ))
-                                : data.allMarkdownRemark.nodes.filter((node: any) => node.fields.slug !== "/404/").map((node: any, i: number) => (
-                                    <SidebarItem key={ i } color={ data.contentYaml.color } title={ node.frontmatter.title } link={ node.fields.slug } />
-                                ))
-                        }
-                    </ol>
-                </nav>
-            </div>
+                {
+                    data.contentYaml.navigation.map((node: any, i: number) => (
+                        <div
+                            key={ i }
+                            css={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: 20,
+                            }}
+                        >
+                            <div css={{
+                                fontSize: "1.2em",
+                                fontWeight: 500,
+                            }}>
+                                { node.section }
+                            </div>
+                            <div css={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: 15,
+                            }}>
+                                {
+                                    node.links.map((node: any, i: number) => (
+                                        <Link
+                                            key={ i }
+                                            to={ node.link }
+                                            css={{
+                                                color: typeof document !== "undefined" && document.location.pathname === node.link ? "var(--accent)" : "var(--gray1)",
+                                                fontWeight: typeof document !== "undefined" && document.location.pathname === node.link ? 500 : 400,
+                                                ":hover": {
+                                                    color: "var(--text)",
+                                                },
+                                            }}
+                                        >
+                                            { node.name }
+                                        </Link>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    ))
+                }
+            </nav>
         </div>
     );
 };
-
-export default Sidebar;
