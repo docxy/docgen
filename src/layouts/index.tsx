@@ -6,8 +6,9 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Main from "../components/Main";
 
-import "../styles/base.css";
 import "../styles/normalize.css";
+import "../styles/fonts.css";
+import "../styles/base.css";
 
 interface DefaultLayoutProps {
     title: string;
