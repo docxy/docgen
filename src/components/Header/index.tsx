@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
-import Link from "./Link";
+import Link from "../Link";
 
 
 // Header logo
