@@ -1,79 +1,119 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
-import "./content.css";
-
-const Content: React.FunctionComponent = ({ children }) => {
-    const data = useStaticQuery(graphql`
-        query ContentMetaQuery {
-            contentYaml {
-                color
-            }
-        }
-    `);
-
-    return (
-        <div css={{
-            display: "flex",
-            maxWidth: "calc(100% - 22rem)",
-            width: "100%",
-            "@media (max-width: 768px)": {
-                maxWidth: "100%",
+export default ({ children }: React.PropsWithChildren<{ s: string; }>): React.ReactElement => (
+    <article css={{
+        flex: 3,
+        lineHeight: "2rem",
+        overflowX: "auto",
+        "& a": {
+            color: "var(--accent)",
+            borderBottom: "1px solid transparent",
+            fontWeight: 500,
+            transition: "color var(--transition-duration) var(--transition-function), border-color var(--transition-duration) var(--transition-function)",
+            ":hover": {
+                color: "var(--accent-alt)",
+                borderColor: "var(--accent-alt)",
             },
-        }}>
-            <div css={{
-                width: "100%",
-                borderRadius: ".2rem",
-                backgroundColor: "#0a0a0a",
-                boxShadow: "0 0 5px rgba(0, 0, 0, 1), 0 5px 22px -8px rgba(0, 0, 0, 1)",
-                border: "1px solid #1a1a1a",
-                "@media (max-width: 768px)": {
-                    borderRadius: 0,
-                },
-            }}>
-                <article css={{
-                    padding: "4rem 6rem",
-                    flex: "1 1 auto",
-                    lineHeight: "2rem",
-                    "@media (max-width: 768px)": {
-                        padding: "4rem",
-                    },
-                    "& a": {
-                        color: data.contentYaml.color || "#3eb0ef",
-                        fontWeight: 500,
-                        position: "relative",
-                        "::before": {
-                            content: " ",
-                            position: "absolute",
-                            bottom: -4,
-                            left: 0,
-                            width: "100%",
-                            height: 1.5,
-                            opacity: 0,
-                            backgroundColor: data.contentYaml.color || "#3eb0ef",
-                            transition: "width 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)",
-                        },
-                        "::after": {
-                            content: " ",
-                            position: "absolute",
-                            bottom: -4,
-                            left: 0,
-                            right: 0,
-                            height: 1.5,
-                            backgroundColor: data.contentYaml.color || "#3eb0ef",
-                            opacity: .1,
-                        },
-                        ":hover::before": {
-                            opacity: 1,
-                            width: "42%",
-                        },
-                    },
-                }}>
-                    { children }
-                </article>
-            </div>
-        </div>
-    );
-};
-
-export default Content;
+        },
+        "& abbr[title]": {
+            textDecoration: "none",
+            borderBottom: "2px dotted var(--gray3)",
+        },
+        "& blockquote": {
+            margin: "20px 0",
+            padding: 20,
+            backgroundColor: "var(--gray6)",
+            borderRadius: 3,
+        },
+        "& blockquote p": {
+            margin: 0,
+        },
+        "& hr": {
+            border: "none",
+            width: 50,
+            height: 3,
+            borderRadius: 2,
+            backgroundColor: "var(--gray5)",
+            margin: "50px auto",
+        },
+        "& img": {
+            borderRadius: 3,
+            display: "flex",
+            maxWidth: "100%",
+            margin: "0 auto",
+        },
+        "& kbd": {
+            display: "inline-block",
+            padding: "0px 8px",
+            borderRadius: 3,
+            border: "2px solid var(--gray5)",
+            backgroundColor: "var(--gray6)",
+            boxShadow: "0px 4px 0 0 var(--gray5)",
+            transform: "translateY(-3px)",
+            transition: "transform var(--transition-duration) var(--transition-function), box-shadow var(--transition-duration) var(--transition-function)",
+            cursor: "pointer",
+        },
+        "& kbd:active": {
+            transform: "translateY(0px)",
+            boxShadow: "0px 1px 0 0 var(--gray5)",
+        },
+        "& note": {
+            display: "block",
+            margin: "20px 0",
+            padding: 20,
+            backgroundColor: "var(--gray6)",
+            borderRadius: 3,
+        },
+        "& note:before": {
+            content: "attr(type)",
+            display: "block",
+            fontWeight: 500,
+            textTransform: "uppercase",
+        },
+        "& note[type=bug]:before, & note[type=danger]:before, & note[type=error]:before": {
+            color: "var(--error)",
+        },
+        "& note[type=tip]:before, & note[type=info]:before": {
+            color: "var(--info)",
+        },
+        "& note[type=success]:before": {
+            color: "var(--success)",
+        },
+        "& note[type=warn]:before, & note[type=warning]:before": {
+            color: "var(--warning)",
+        },
+        "& pre, & code": {
+            padding: "3px 5px",
+            borderRadius: 3,
+            backgroundColor: "var(--gray6)",
+        },
+        "& pre": {
+            overflowX: "auto",
+        },
+        "& pre code": {
+            padding: 0,
+            backgroundColor: "transparent",
+        },
+        "& .gatsby-highlight": {
+            margin: "20px 0",
+            padding: 20,
+            backgroundColor: "var(--gray6)",
+            borderRadius: 3,
+            overflow: "auto",
+        },
+        "& .gatsby-highlight pre[class*=language-]": {
+            margin: 0,
+            padding: 0,
+            backgroundColor: "transparent",
+            float: "left",
+        },
+        "& .gatsby-highlight pre[class*=language-].line-numbers": {
+            paddingLeft: 40,
+        },
+        "& .gatsby-highlight pre[class*=language-].line-numbers .line-numbers-rows": {
+            borderColor: "var(--gray5)",
+        },
+    }}>
+        { children }
+    </article>
+);
