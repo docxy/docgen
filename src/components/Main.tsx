@@ -1,39 +1,27 @@
 import React from "react";
+import { PageProps } from "gatsby";
 
 import Content from "./Content";
 import Sidebar from "./Sidebar";
 import SidebarToggle from "./SidebarToggle";
 
-export default class Main extends React.PureComponent {
-    state = {
-        sidebar: false,
-    };
+export default ({ children }: PageProps): React.ReactElement => {
+    const [ sidebarStatus, setSidebarStatus ] = React.useState(false);
 
-    private toggleSidebar = () => {
-        this.setState({
-            sidebar: !this.state.sidebar,
-        });
-    }
-
-    public render = (): React.ReactElement => (
+    return (
         <main css={{
+            maxWidth: 1300,
+            minHeight: "calc(100vh)",
+            margin: "0 auto",
+            padding: 25,
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            position: "relative",
-            margin: "9.8rem auto 0 auto",
-            padding: "0 4rem 4rem 4rem",
-            minHeight: "calc(100vh - 9.8rem)",
-            maxWidth: "128rem",
-            "@media (max-width: 768px)": {
-                padding: "0 0 4rem 0",
-            },
+            gap: 25,
         }}>
-            <Sidebar open={ this.state.sidebar } />
+            <Sidebar open={ sidebarStatus } />
             <Content>
-                { this.props.children }
+                { children }
             </Content>
-            <SidebarToggle open={ this.state.sidebar } onClickHandler={ this.toggleSidebar } />
+            <SidebarToggle open={ sidebarStatus } onClickHandler={ () => setSidebarStatus(!sidebarStatus) } />
         </main>
     );
 }
