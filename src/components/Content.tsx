@@ -107,6 +107,9 @@ export default ({ children }: React.PropsWithChildren<{ s: string; }>): React.Re
             backgroundColor: "transparent",
             float: "left",
         },
+        "& .gatsby-highlight code[class*=language-]": {
+            color: "var(--text)",
+        },
         "& .gatsby-highlight pre[class*=language-].line-numbers": {
             paddingLeft: 40,
         },
