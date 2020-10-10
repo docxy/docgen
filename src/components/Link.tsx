@@ -3,6 +3,7 @@ import React from "react";
 
 interface LinkProps {
     to: string;
+    [key: string]: string;
 }
 
 const Link: React.FunctionComponent<LinkProps> = ({ children, to, ...props }) => {
@@ -28,7 +29,7 @@ const Link: React.FunctionComponent<LinkProps> = ({ children, to, ...props }) =>
         <a
             href={ to }
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             { ...props }
         >
             { children }
