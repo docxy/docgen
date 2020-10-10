@@ -9,6 +9,11 @@
     --gray5: #e5e5ea;
     --gray6: #f2f2f7;
 
+    --error: #ff3b30;
+    --info: #5ac8fa;
+    --success: #34c759;
+    --warning: #ffcc00;
+
     --accent: #007aff;
     --accent-alt: #0a84ff;
 
@@ -27,6 +32,11 @@
         --gray4: #3a3a3c;
         --gray5: #2c2c2e;
         --gray6: #1c1c1e;
+
+        --error: #ff453a;
+        --info: #64d2ff;
+        --success: #30d158;
+        --warning: #ffd60a;
 
         --accent: #0a84ff;
         --accent-alt: #007aff;
