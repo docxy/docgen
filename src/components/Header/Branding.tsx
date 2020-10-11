@@ -10,6 +10,7 @@ export default ({ name, logo }: HeaderBrandingProps): React.ReactElement => (
         display: "flex",
         alignItems: "center",
         gap: 20,
+        lineHeight: "1.9em",
     }}>
         <Link to="/">
             {
