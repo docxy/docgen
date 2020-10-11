@@ -1,53 +1,41 @@
 ---
-# Name of the website
-# Defaults to the title (see below)
-site_name: ""
+# Title of the website. Required.
+title: "AwesomeDocs"
 
-# URL where the site will live
-site_url: ""
+# Description of the website. Required.
+description: "AwesomeDocs is a React based open-source documentation site generator. Build beautiful, blazing fast documentation sites for your projects with just markdown."
 
-# Title of the website
-title: ""
+# URL to the logo of your site. Optional.
+logo: "https://github.com/AwesomeDocs.png"
 
-# Description of the website
-description: ""
+# Link to the git repository. Optional.
+repository: "https://github.com/AwesomeDocs"
 
-# URL to the logo of your site
-logo: ""
+# Link to the twitter account. Optional.
+twitter: "https://twitter.com/k3rn31p4nic"
 
-# Link to, say GitHub issues, where users can send feedback
-feedback: ""
+# Link to the main website. Optional.
+website: "https://awesomedocs.traction.one"
 
-# Copyright notice that would be placed in the footer
-copyright: "Copyright 2019"
+# Copyright notice that would be placed in the footer. Optional.
+copyright: "Copyright 2020 - Sankarsan Kampa"
 
-
-# Accent color of the site
-# Default: `#3eb0ef`
-color: ""
-
-
-# List of links that will be shown in the header
-# This is just an example structure
-# You can modify it any way you like
+# List of links for the header. Optional.
 links:
-  - name: "Website"
-    link: "https://awesomedocs.traction.one"
-  - name: "GitHub"
-    link: "https://github.com/AwesomeDocs"
+- name: "Author"
+  link: "https://traction.one"
+- name: "Author's GitHub"
+  link: "https://github.com/k3rn31p4nic"
 
-
-# Structure for sidebar navigation
-# This is just an example structure
-# You can modify it any way you like
+# List of items for the navigating the documentation.
 navigation:
-  - section: "Intro"
-    links:
-        - name: "Home"
-          link: "/"
-  - section: "External"
-    links:
-      - name: "FAQ"
-        link: "/faq"
-      - name: "Help"
-        link: "/help"
+- section: "Intro"
+  links:
+  - name: "Home"
+    link: "/"
+- section: "Example"
+  links:
+  - name: "Internal Link"
+    link: "/404"
+  - name: "External Link"
+    link: "https://traction.one"
