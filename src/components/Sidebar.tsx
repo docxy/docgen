@@ -54,7 +54,7 @@ export default ({ open }: SidebarProps): React.ReactElement => {
                 flexDirection: "column",
                 gap: 25,
                 "@media (min-width: 769px)": {
-                    top: 100,
+                    top: 150,
                     position: "sticky",
                 },
             }}>
