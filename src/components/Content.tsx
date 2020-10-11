@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ children }: React.PropsWithChildren<{ s: string; }>): React.ReactElement => (
+export default ({ children }: React.PropsWithChildren<{}>): React.ReactElement => (
     <article css={{
         flex: 3,
         lineHeight: "2rem",
