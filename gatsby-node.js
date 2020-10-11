@@ -45,3 +45,29 @@ exports.createPages = ({ graphql, actions }) => {
         });
     });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const typeDefs = `
+        type ContentYaml implements Node {
+            title: String!
+            description: String!
+            copyright: String
+            logo: String
+            website: String
+            repository: String
+            twitter: String
+            navigation: [ContentNavigation!]
+            links: [ContentNavigationLink!]
+        }
+        type ContentNavigation {
+            section: String!
+            links: [ContentNavigationLink!]!
+        }
+        type ContentNavigationLink {
+            name: String!
+            link: String!
+        }
+    `;
+
+    actions.createTypes(typeDefs);
+};
