@@ -2,12 +2,12 @@ import React from "react";
 
 import Link from "../Link";
 
-interface HeaderLink {
+export interface HeaderLinkProps {
     name: string;
     link: string;
-}
+};
 
-export default ({ children, name, link }: React.PropsWithChildren<HeaderLink>): React.ReactElement => (
+export default ({ children, name, link }: React.PropsWithChildren<HeaderLinkProps>): React.ReactElement => (
     <Link
         to={ link }
         title={ name }
