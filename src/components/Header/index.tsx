@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Branding from "./Branding";
 import HeaderLink, { HeaderLinkProps } from "./Link";
 import Links from "./Links";
+import Search from "./Search";
 
 export default (): React.ReactElement => {
     const data = useStaticQuery(graphql`
@@ -60,27 +61,35 @@ export default (): React.ReactElement => {
                 <div css={{
                     maxWidth: 1300,
                     margin: "0 auto",
-                    padding: "15px 25px",
+                    padding: "10px 25px",
                     display: "flex",
-                    gap: 20,
                     alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: 20,
                     fontWeight: 500,
                 }}>
-                    {
-                        data.contentYaml.links && data.contentYaml.links.map((node: HeaderLinkProps, i: number) => (
-                            <HeaderLink
-                                key={ i }
-                                link={ node.link }
-                                css={{
-                                    color: "var(--gray1)",
-                                    ":hover": {
-                                        color: "var(--text)",
-                                    },
-                                }}>
-                                    { node.name }
-                            </HeaderLink>
-                        ))
-                    }
+                    <div css={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 20,
+                    }}>
+                        {
+                            data.contentYaml.links && data.contentYaml.links.map((node: HeaderLinkProps, i: number) => (
+                                <HeaderLink
+                                    key={ i }
+                                    link={ node.link }
+                                    css={{
+                                        color: "var(--gray1)",
+                                        ":hover": {
+                                            color: "var(--text)",
+                                        },
+                                    }}>
+                                        { node.name }
+                                </HeaderLink>
+                            ))
+                        }
+                    </div>
+                    <Search />
                 </div>
             </div>
         </header>
