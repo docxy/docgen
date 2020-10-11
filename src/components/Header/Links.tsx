@@ -1,36 +1,53 @@
-import Link from "../Link";
+import { FiCompass, FiGithub, FiTwitter } from "react-icons/fi";
 
-interface HeaderLink {
-    name: string;
-    link: string;
-}
+import HeaderLink from "./Link";
 
 interface HeaderLinksProps {
-    links: HeaderLink[];
+    repository: string;
+    twitter: string;
+    website: string;
 }
 
-export default ({ links }: HeaderLinksProps): React.ReactElement => (
+export default ({ repository, twitter, website }: HeaderLinksProps): React.ReactElement => (
     <div css={{
         listStyle: "none",
         display: "flex",
+        alignItems: "center",
         gap: 20,
+        fontSize: 25,
         "@media (max-width: 768px)": {
             display: "none",
         },
     }}>
         {
-            links && links.map((node: HeaderLink, i: number) => (
-                <li key={ i }>
-                    <Link to={ node.link } css={{
-                        color: "var(--gray1)",
-                        ":hover": {
-                            color: "var(--text)",
-                        },
-                    }}>
-                        { node.name }
-                    </Link>
-                </li>
-            ))
+            website && (
+                <HeaderLink
+                    name={ "Website" }
+                    link={ website }
+                >
+                    <FiCompass />
+                </HeaderLink>
+            )
+        }
+        {
+            repository && (
+                <HeaderLink
+                    name={ "Repository" }
+                    link={ repository }
+                >
+                    <FiGithub />
+                </HeaderLink>
+            )
+        }
+        {
+            twitter && (
+                <HeaderLink
+                    name={ "Twitter" }
+                    link={ twitter }
+                >
+                    <FiTwitter />
+                </HeaderLink>
+            )
         }
     </div>
 );
