@@ -5,7 +5,7 @@ import Link from "../Link";
 export interface HeaderLinkProps {
     name: string;
     link: string;
-};
+}
 
 export default ({ children, name, link }: React.PropsWithChildren<HeaderLinkProps>): React.ReactElement => (
     <Link

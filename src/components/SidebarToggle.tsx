@@ -6,7 +6,7 @@ interface ISidebarToggleProps {
     onClickHandler: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const SidebarToggle: React.FunctionComponent<ISidebarToggleProps> = ({ open, onClickHandler }) => (
+export default  ({ open, onClickHandler }: React.PropsWithChildren<ISidebarToggleProps>): React.ReactElement => (
     <div
         css={{
             position: "fixed",
@@ -30,5 +30,3 @@ const SidebarToggle: React.FunctionComponent<ISidebarToggleProps> = ({ open, onC
         { open ? <FiX /> : <FiMenu /> }
     </div>
 );
-
-export default SidebarToggle;

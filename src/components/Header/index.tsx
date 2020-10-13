@@ -1,3 +1,4 @@
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Branding from "./Branding";
@@ -83,8 +84,9 @@ export default (): React.ReactElement => {
                                         ":hover": {
                                             color: "var(--text)",
                                         },
-                                    }}>
-                                        { node.name }
+                                    }}
+                                >
+                                    { node.name }
                                 </HeaderLink>
                             ))
                         }

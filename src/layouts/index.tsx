@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import Helmet from "react-helmet";
 
 import Footer from "../components/Footer";
@@ -15,7 +15,7 @@ interface DefaultLayoutProps {
     description: string;
 }
 
-const DefaultLayout: React.FunctionComponent<DefaultLayoutProps> = ({ children, title, description }) => {
+export default  ({ children, title, description }: React.PropsWithChildren<DefaultLayoutProps>): React.ReactElement => {
     const data = useStaticQuery(graphql`
         query DefaultLayoutQuery {
             contentsYaml {
@@ -42,5 +42,3 @@ const DefaultLayout: React.FunctionComponent<DefaultLayoutProps> = ({ children, 
         </>
     );
 };
-
-export default DefaultLayout;

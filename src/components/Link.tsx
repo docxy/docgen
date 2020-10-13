@@ -1,12 +1,12 @@
-import { Link as GatsbyLink } from "gatsby";
 import React from "react";
+import { Link as GatsbyLink } from "gatsby";
 
 interface LinkProps {
     to: string;
     [key: string]: string;
 }
 
-const Link: React.FunctionComponent<LinkProps> = ({ children, to, ...props }) => {
+export default ({ children, to, ...props }: React.PropsWithChildren<LinkProps>): React.ReactElement => {
     if (to === "") {
         return (
             <a { ...props }>
@@ -36,5 +36,3 @@ const Link: React.FunctionComponent<LinkProps> = ({ children, to, ...props }) =>
         </a>
     );
 };
-
-export default Link;

@@ -1,11 +1,10 @@
 import React from "react";
-import { PageProps } from "gatsby";
 
 import Content from "./Content";
 import Sidebar from "./Sidebar";
 import SidebarToggle from "./SidebarToggle";
 
-export default ({ children }: PageProps): React.ReactElement => {
+export default ({ children }: React.PropsWithChildren<Record<string, unknown>>): React.ReactElement => {
     const [ sidebarStatus, setSidebarStatus ] = React.useState(false);
 
     return (
@@ -24,4 +23,4 @@ export default ({ children }: PageProps): React.ReactElement => {
             <SidebarToggle open={ sidebarStatus } onClickHandler={ () => setSidebarStatus(!sidebarStatus) } />
         </main>
     );
-}
+};

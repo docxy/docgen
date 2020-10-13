@@ -1,9 +1,9 @@
 import React from "react";
 
 interface HTMLProps {
-    htmlAttributes: object;
+    htmlAttributes: Record<string, unknown>;
     headComponents: React.Component[];
-    bodyAttributes: object;
+    bodyAttributes: Record<string, unknown>;
     preBodyComponents: React.Component[];
     body: string;
     postBodyComponents: React.Component[];

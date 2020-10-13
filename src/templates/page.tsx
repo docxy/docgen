@@ -1,9 +1,21 @@
-import { graphql } from "gatsby";
 import React from "react";
+import { graphql } from "gatsby";
 
 import Layout from "../layouts/index";
 
-export default (props: { data: any }): React.ReactElement => (
+interface PageQuery {
+    data: {
+        markdownRemark: {
+            frontmatter: {
+                title: string;
+                description: string;
+            };
+            html: string;
+        };
+    };
+}
+
+export default (props: React.PropsWithChildren<PageQuery>): React.ReactElement => (
     <Layout
         title={ props.data.markdownRemark.frontmatter.title }
         description={ props.data.markdownRemark.frontmatter.description }

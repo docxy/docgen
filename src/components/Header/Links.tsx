@@ -1,3 +1,4 @@
+import React from "react";
 import { FiCompass, FiGithub, FiTwitter } from "react-icons/fi";
 
 import HeaderLink from "./Link";

@@ -109,5 +109,5 @@ export default (): React.ReactElement => {
                 )
             }
         </div>
-    )
+    );
 };

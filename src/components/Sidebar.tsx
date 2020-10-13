@@ -7,19 +7,25 @@ interface SidebarProps {
     open: boolean;
 }
 
+interface SidebarNavigationLinkQuery {
+    name: string;
+    link: string;
+}
+
+interface SidebarNavigationQuery {
+    links: SidebarNavigationLinkQuery[];
+    section: string;
+}
+
+interface SidebarQuery {
+    contentsYaml: {
+        navigation: SidebarNavigationQuery[];
+    };
+}
+
 export default ({ open }: SidebarProps): React.ReactElement => {
-    const data = useStaticQuery(graphql`
+    const data: SidebarQuery = useStaticQuery(graphql`
         query SidebarQuery {
-            allMarkdownRemark {
-                nodes {
-                    frontmatter {
-                        title
-                    }
-                    fields {
-                        slug
-                    }
-                }
-            }
             contentsYaml {
                 navigation {
                     links {
@@ -59,7 +65,7 @@ export default ({ open }: SidebarProps): React.ReactElement => {
                 },
             }}>
                 {
-                    data.contentsYaml.navigation.map((node: any, i: number) => (
+                    data.contentsYaml.navigation.map((node: SidebarNavigationQuery, i: number) => (
                         <div
                             key={ i }
                             css={{
@@ -80,7 +86,7 @@ export default ({ open }: SidebarProps): React.ReactElement => {
                                 gap: 15,
                             }}>
                                 {
-                                    node.links.map((node: any, i: number) => (
+                                    node.links.map((node: SidebarNavigationLinkQuery, i: number) => (
                                         <Link
                                             key={ i }
                                             to={ node.link }
