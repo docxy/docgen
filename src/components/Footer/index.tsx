@@ -38,13 +38,17 @@ export default (): React.ReactElement => {
                     padding: "20px 25px",
                 }}>
                     <Link
-                        to="https://github.com/AwesomeDocs"
-                        title="Build awesome documentation sites with AwesomeDocs"
+                        to="https://docxy.traction.one"
+                        title="Build awesome documentation sites with Docxy"
                         css={{
                             opacity: .8,
+                            transition: "opacity var(--transition-duration) var(--transition-function)",
+                            ":hover": {
+                                opacity: 1,
+                            },
                         }}
                     >
-                        Powered by AwesomeDocs
+                        Powered by Docxy
                     </Link>
                 </div>
             </div>
