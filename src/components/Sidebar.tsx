@@ -20,7 +20,7 @@ export default ({ open }: SidebarProps): React.ReactElement => {
                     }
                 }
             }
-            contentYaml {
+            contentsYaml {
                 navigation {
                     links {
                         name
@@ -59,7 +59,7 @@ export default ({ open }: SidebarProps): React.ReactElement => {
                 },
             }}>
                 {
-                    data.contentYaml.navigation.map((node: any, i: number) => (
+                    data.contentsYaml.navigation.map((node: any, i: number) => (
                         <div
                             key={ i }
                             css={{

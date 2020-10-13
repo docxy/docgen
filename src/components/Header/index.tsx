@@ -8,7 +8,7 @@ import Search from "./Search";
 export default (): React.ReactElement => {
     const data = useStaticQuery(graphql`
         query HeaderLogoQuery {
-            contentYaml {
+            contentsYaml {
                 title
                 logo
                 repository
@@ -43,13 +43,13 @@ export default (): React.ReactElement => {
                     fontWeight: 500,
                 }}>
                     <Branding
-                        name={ data.contentYaml.title }
-                        logo={ data.contentYaml.logo }
+                        name={ data.contentsYaml.title }
+                        logo={ data.contentsYaml.logo }
                     />
                     <Links
-                        repository={ data.contentYaml.repository }
-                        twitter={ data.contentYaml.twitter }
-                        website={ data.contentYaml.website }
+                        repository={ data.contentsYaml.repository }
+                        twitter={ data.contentsYaml.twitter }
+                        website={ data.contentsYaml.website }
                     />
                 </div>
             </div>
@@ -74,7 +74,7 @@ export default (): React.ReactElement => {
                         gap: 20,
                     }}>
                         {
-                            data.contentYaml.links && data.contentYaml.links.map((node: HeaderLinkProps, i: number) => (
+                            data.contentsYaml.links && data.contentsYaml.links.map((node: HeaderLinkProps, i: number) => (
                                 <HeaderLink
                                     key={ i }
                                     link={ node.link }

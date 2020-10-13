@@ -18,7 +18,7 @@ interface DefaultLayoutProps {
 const DefaultLayout: React.FunctionComponent<DefaultLayoutProps> = ({ children, title, description }) => {
     const data = useStaticQuery(graphql`
         query DefaultLayoutQuery {
-            contentYaml {
+            contentsYaml {
                 title
                 description
             }
@@ -28,11 +28,11 @@ const DefaultLayout: React.FunctionComponent<DefaultLayoutProps> = ({ children, 
     return (
         <>
             <Helmet
-                defaultTitle={ data.contentYaml.title }
-                title={ title || data.contentYaml.title }
-                titleTemplate={ "%s - " + data.contentYaml.title }
+                defaultTitle={ data.contentsYaml.title }
+                title={ title || data.contentsYaml.title }
+                titleTemplate={ "%s - " + data.contentsYaml.title }
             >
-                <meta name="description" content={ description || data.contentYaml.description } />
+                <meta name="description" content={ description || data.contentsYaml.description } />
             </Helmet>
             <Header />
             <Main>

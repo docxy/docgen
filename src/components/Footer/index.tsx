@@ -5,7 +5,7 @@ import Link from "../Link";
 export default (): React.ReactElement => {
     const data = useStaticQuery(graphql`
         query {
-            contentYaml {
+            contentsYaml {
                 copyright
             }
         }
@@ -22,7 +22,7 @@ export default (): React.ReactElement => {
                 textAlign: "center",
                 color: "var(--gray1)",
             }}>
-                { data.contentYaml.copyright }
+                { data.contentsYaml.copyright }
             </div>
 
             <div css={{
