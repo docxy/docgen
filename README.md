@@ -1,40 +1,49 @@
 <div align="center">
-  <img src="https://github.com/AwesomeDocs.png" alt="Awesome logo, ain't it?" height="200" />
-  <h1>AwesomeDocs</h1>
-  <p>An awesome documentation site generator made with Gatsby! So, inherently, it's blazing fast!</p>
+    <img src="https://github.com/docxy.png" alt="Awesome logo, ain't it?" height="200" />
+    <h1>Docxy</h1>
+    <p>Docxy is a React based open-source documentation site generator. Build beautiful, blazing fast documentation sites for your projects with just markdown.</p>
 </div>
 
 ## Prerequisites
-* The latest LTS version of [Node.js]
-* [Yarn] package manager for Node.js
-* [Git]
+*   [Git]
+*   [Node.js], preferrably the LTS version
 
 ## Get started
-1.  Install the global [AwesomeDocs CLI Tool]
-2.  Initialize [AwesomeDocs] in a directory.
+1.  Install the [Docxy CLI]
+1.  Create your [Docxy] project:
     ```bash
-    mkdir CoolDocs && cd CoolDocs
-    awesomedocs init
+    docxy create my-awesome-docs
     ```
-3.  Add markdown pages in the `content` directory which will serve as your
+1.  Initialize [Docxy] in the project directory:
+    ```bash
+    cd my-awesome-docs
+    docxy init
+    ```
+1.  Add markdown pages in the `contents` directory which will serve as your
     documentation pages. You'll find two example pages already in there.
-4.  Edit the `config.yaml` file in the `content` directory which contains
+1.  Edit the `config.yaml` file in the `contents` directory which contains
     configurations for the site. Edit those as per your need.
-5.  **(OPTIONAL)** Anything you put in the `static` directory will be directly
+1.  Anything you put in the `static` directory will be directly
     available in the root of your website. It is the right place to put your
     `favicon.ico` or `CNAME` file.
-6.  **Check if the site looks fine by starting a development server**
+1.  You can start a hot-reloading development server while working on your site
+    using the following command:
     ```bash
-    awesomedocs serve
+    docxy serve
     ```
-7.  **Build the documentation when you're ready for deployment**
+1.  Build the documentation when you're ready for deployment using the following
+    command:
     ```bash
-    awesomedocs build
+    docxy build
     ```
-    This will build the documentation inside the `./.awesome/build` directory.
+    This will build an optimized static site inside the `build` directory from your markdown pages ready for deployment to production.
+
+    You can deploy it anywhere you want - [GitHub Pages](https://pages.github.com),
+    [GitLab Pages](https://gitlab.com/pages), [DigitalOcean](https://m.do.co/c/0ee6cb9c7ee0),
+    AWS, GCP, Azure, Heroku, or your own server!
+
 
 [Node.js]: https://nodejs.org/
-[Yarn]: https://yarnpkg.com/
 [Git]: https://git-scm.com
-[AwesomeDocs]: https://github.com/AwesomeDocs/AwesomeDocs
-[AwesomeDocs CLI Tool]: https://github.com/AwesomeDocs/CLI
+[Docxy]: https://github.com/docxy/docxy
+[Docxy CLI]: https://github.com/docxy/cli
