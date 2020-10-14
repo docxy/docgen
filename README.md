@@ -45,5 +45,5 @@
 
 [Node.js]: https://nodejs.org/
 [Git]: https://git-scm.com
-[Docxy]: https://github.com/docxy/docxy
-[Docxy CLI]: https://github.com/docxy/cli
+[Docxy]: https://github.com/docxy/docgen
+[Docxy CLI]: https://github.com/docxy/docxy
