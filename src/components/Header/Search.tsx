@@ -89,6 +89,15 @@ export default (): React.ReactElement => {
                             margin: "0 auto",
                             padding: 25,
                             display: "flex",
+                            fontSize: "1.5em",
+                        }}>
+                            Search results for "{ resultQuery }"
+                        </div>
+                        <div css={{
+                            maxWidth: 1300,
+                            margin: "0 auto",
+                            padding: 25,
+                            display: "flex",
                             flexDirection: "column",
                             // Workaround for Safari, as it doesn't support flex `gap`.
                             "& > a": {
@@ -103,8 +112,8 @@ export default (): React.ReactElement => {
                                             color: "var(--text)",
                                         },
                                     }}>
-                                        <div>{ result.title }</div>
-                                        <div>{ result.description }</div>
+                                        <div css={{ fontWeight: 700, marginBottom: 5, }}>{ result.title }</div>
+                                        <div css={{ opacity: .8 }}>{ result.description }</div>
                                     </Link>
                                 )
                             }
