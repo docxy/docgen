@@ -1,4 +1,5 @@
 import React from "react";
+import { IoIosArrowForward } from "react-icons/io";
 
 import Link from "../Link";
 
@@ -31,10 +32,14 @@ export default ({ name, logo }: HeaderBrandingProps): React.ReactElement => (
         </Link>
 
         <div css={{
+            display: "flex",
+            alignItems: "center",
+            color: "var(--gray2)",
             // Workaround for Safari, as it doesn't support flex `gap`.
-            margin: "0 20px",
-            color: "var(--gray3)",
-        }}>/</div>
+            margin: "0 10px",
+        }}>
+            <IoIosArrowForward />
+        </div>
 
         <Link to="/">Docs</Link>
     </div>
