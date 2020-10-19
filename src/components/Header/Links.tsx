@@ -14,10 +14,13 @@ export default ({ repository, twitter, website }: HeaderLinksProps): React.React
         listStyle: "none",
         display: "flex",
         alignItems: "center",
-        gap: 20,
         fontSize: 25,
         "@media (max-width: 768px)": {
             display: "none",
+        },
+        // Workaround for Safari, as it doesn't support flex `gap`.
+        "& a": {
+            marginLeft: 20,
         },
     }}>
         {

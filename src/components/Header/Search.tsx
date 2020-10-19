@@ -47,7 +47,6 @@ export default (): React.ReactElement => {
             <div css={{
                 display: "flex",
                 alignItems: "center",
-                gap: 5,
             }}>
                 <FiSearch color="var(--gray1)" />
                 <input
@@ -58,6 +57,8 @@ export default (): React.ReactElement => {
                     onChange={ handleQuery }
                     css={{
                         backgroundColor: "transparent",
+                        // Workaround for Safari, as it doesn't support flex `gap`.
+                        margin: "0 5px",
                     }}
                 />
                 <FiX
@@ -89,7 +90,10 @@ export default (): React.ReactElement => {
                             padding: 25,
                             display: "flex",
                             flexDirection: "column",
-                            gap: 20,
+                            // Workaround for Safari, as it doesn't support flex `gap`.
+                            "& > a": {
+                                marginBottom: 20,
+                            },
                         }}>
                             {
                                 results.map(result =>

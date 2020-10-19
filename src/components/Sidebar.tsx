@@ -58,10 +58,13 @@ export default ({ open }: SidebarProps): React.ReactElement => {
             <nav css={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 25,
                 "@media (min-width: 769px)": {
                     top: 150,
                     position: "sticky",
+                },
+                // Workaround for Safari, as it doesn't support flex `gap`.
+                "& > div": {
+                    marginBottom: 5,
                 },
             }}>
                 {
@@ -71,7 +74,10 @@ export default ({ open }: SidebarProps): React.ReactElement => {
                             css={{
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: 20,
+                                // Workaround for Safari, as it doesn't support flex `gap`.
+                                "& > div": {
+                                    marginBottom: 20,
+                                },
                             }}
                         >
                             <div css={{
@@ -83,7 +89,10 @@ export default ({ open }: SidebarProps): React.ReactElement => {
                             <div css={{
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: 15,
+                                // Workaround for Safari, as it doesn't support flex `gap`.
+                                "& > a": {
+                                    marginBottom: 15,
+                                },
                             }}>
                                 {
                                     node.links.map((node: SidebarNavigationLinkQuery, i: number) => (

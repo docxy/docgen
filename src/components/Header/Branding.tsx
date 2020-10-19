@@ -11,7 +11,6 @@ export default ({ name, logo }: HeaderBrandingProps): React.ReactElement => (
     <div css={{
         display: "flex",
         alignItems: "center",
-        gap: 20,
         lineHeight: "1.9em",
     }}>
         <Link to="/">
@@ -31,7 +30,11 @@ export default ({ name, logo }: HeaderBrandingProps): React.ReactElement => (
             }
         </Link>
 
-        <div css={{ color: "var(--gray3)" }}>/</div>
+        <div css={{
+            // Workaround for Safari, as it doesn't support flex `gap`.
+            margin: "0 20px",
+            color: "var(--gray3)",
+        }}>/</div>
 
         <Link to="/">Docs</Link>
     </div>

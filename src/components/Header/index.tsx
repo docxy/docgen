@@ -66,13 +66,15 @@ export default (): React.ReactElement => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    gap: 20,
                     fontWeight: 500,
                 }}>
                     <div css={{
                         display: "flex",
                         alignItems: "center",
-                        gap: 20,
+                        // Workaround for Safari, as it doesn't support flex `gap`.
+                        "& a": {
+                            marginRight: 20,
+                        },
                     }}>
                         {
                             data.contentsYaml.links && data.contentsYaml.links.map((node: HeaderLinkProps, i: number) => (
