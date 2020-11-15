@@ -34,10 +34,10 @@ input {
 }
 
 code {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains Mono", Menlo, Consolas, Courier, monospace;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains Mono", Menlo, Consolas, Courier, monospace;
 }
