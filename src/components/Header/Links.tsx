@@ -5,9 +5,9 @@ import HeaderLink from "./Link";
 import ThemeToggle from "./ThemeToggle";
 
 interface HeaderLinksProps {
-  repository: string;
-  twitter: string;
-  website: string;
+    repository: string;
+    twitter: string;
+    website: string;
 }
 
 export default ({
@@ -30,21 +30,27 @@ export default ({
             },
         }}
     >
-        <ThemeToggle></ThemeToggle>
-        {website && (
-            <HeaderLink name={"Website"} link={website}>
-                <FiCompass />
-            </HeaderLink>
-        )}
-        {repository && (
-            <HeaderLink name={"Repository"} link={repository}>
-                <FiGithub />
-            </HeaderLink>
-        )}
-        {twitter && (
-            <HeaderLink name={"Twitter"} link={twitter}>
-                <FiTwitter />
-            </HeaderLink>
-        )}
+        <ThemeToggle />
+        {
+            website && (
+                <HeaderLink name={ "Website" } link={ website }>
+                    <FiCompass />
+                </HeaderLink>
+            )
+        }
+        {
+            repository && (
+                <HeaderLink name={ "Repository" } link={ repository }>
+                    <FiGithub />
+                </HeaderLink>
+            )
+        }
+        {
+            twitter && (
+                <HeaderLink name={ "Twitter" } link={ twitter }>
+                    <FiTwitter />
+                </HeaderLink>
+            )
+        }
     </div>
 );

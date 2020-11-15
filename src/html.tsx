@@ -1,16 +1,16 @@
 import React from "react";
 
 interface HTMLProps {
-  htmlAttributes: Record<string, unknown>;
-  headComponents: React.Component[];
-  bodyAttributes: Record<string, unknown>;
-  preBodyComponents: React.Component[];
-  body: string;
-  postBodyComponents: React.Component[];
+    htmlAttributes: Record<string, unknown>;
+    headComponents: React.Component[];
+    bodyAttributes: Record<string, unknown>;
+    preBodyComponents: React.Component[];
+    body: string;
+    postBodyComponents: React.Component[];
 }
 
 export default (
-    props: React.PropsWithChildren<HTMLProps>
+    props: React.PropsWithChildren<HTMLProps>,
 ): React.ReactElement => (
     <html lang="en" {...props.htmlAttributes}>
         <head>
@@ -50,16 +50,16 @@ export default (
             <meta name="msapplication-TileColor" content="#000000" />
             <meta name="theme-color" content="#000000" />
 
-            {props.headComponents}
+            { props.headComponents }
         </head>
-        <body id="___docxy" {...props.bodyAttributes}>
-            {props.preBodyComponents}
+        <body id="___docxy" { ...props.bodyAttributes }>
+            { props.preBodyComponents }
             <div
-                key={"body"}
+                key={ "body" }
                 id="___gatsby"
                 dangerouslySetInnerHTML={{ __html: props.body }}
             />
-            {props.postBodyComponents}
+            { props.postBodyComponents }
         </body>
     </html>
 );
