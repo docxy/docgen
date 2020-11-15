@@ -5,9 +5,10 @@ import Link from "../Link";
 export interface HeaderLinkProps {
     name: string;
     link: string;
+    [key: string]: unknown;
 }
 
-export default ({ children, name, link }: React.PropsWithChildren<HeaderLinkProps>): React.ReactElement => (
+export default ({ children, name, link, ...props }: React.PropsWithChildren<HeaderLinkProps>): React.ReactElement => (
     <Link
         to={ link }
         title={ name }
@@ -17,6 +18,7 @@ export default ({ children, name, link }: React.PropsWithChildren<HeaderLinkProp
                 color: "var(--text)",
             },
         }}
+        { ...props }
     >
         { children }
     </Link>
