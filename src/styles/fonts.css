@@ -1,21 +1,43 @@
 @font-face {
-    font-family: "Inter var";
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
-    font-named-instance: "Regular";
-    src: url("../fonts/Inter.var.woff2") format("woff2");
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("../fonts/Inter.var.woff2") format("woff2");
 }
 
-body, button, input {
-    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-        Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+body,
+button,
+input {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
-    html, button, input {
-        font-family: "Inter var", -apple-system, BlinkMacSystemFont,
-            "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 17px;
-    }
+  html,
+  button,
+  input {
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont,
+      "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+}
+
+code {
+  font-family: "JetBrains Mono", Menlo, Consolas, Courier, monospace;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "JetBrains Mono", Menlo, Consolas, Courier, monospace;
 }
